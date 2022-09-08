@@ -1,0 +1,76 @@
+[2022-09-08 15:25:10 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': True, 'resume': '/home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth', 'manual_seed': 43, 'start_epochs': 0, 'epochs': 5, 'batch_size': 32, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'small', 'FF_img': {'train_pos_data_path': 'ff', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'None'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': False, 'save_dir': './save/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-08 15:25:10 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-08 15:25:10 base_net] (tools.py 17): INFO ==============> Resuming form /home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth....................
+[2022-09-08 15:25:36 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': True, 'resume': '/home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth', 'manual_seed': 43, 'start_epochs': 0, 'epochs': 5, 'batch_size': 32, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'small', 'FF_img': {'train_pos_data_path': 'ff', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'None'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': False, 'save_dir': './save/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-08 15:25:36 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-08 15:25:37 base_net] (tools.py 17): INFO ==============> Resuming form /home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth....................
+[2022-09-08 15:25:46 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': True, 'resume': '/home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth', 'manual_seed': 43, 'start_epochs': 0, 'epochs': 5, 'batch_size': 32, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'small', 'FF_img': {'train_pos_data_path': 'ff', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'None'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': False, 'save_dir': './save/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-08 15:25:46 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-08 15:25:46 base_net] (tools.py 17): INFO ==============> Resuming form /home/lpy/project/deepfake_lpy/save/ckpt_epoch_1_0.5962325962325962.pth....................
+[2022-09-08 15:26:39 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': False, 'resume': '', 'manual_seed': 43, 'start_epochs': 0, 'epochs': 5, 'batch_size': 32, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'small', 'FF_img': {'train_pos_data_path': 'ff', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'None'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': False, 'save_dir': './save/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-08 15:26:39 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-08 15:26:40 base_net] (train.py 42): INFO Start training
+[2022-09-08 15:26:43 base_net] (engine.py 68): INFO Train: [0/5][0/4]	lr 0.0002000	wd 0.0000	avg_loss 0.7056	time_all 3.5234155654907227	mem 9648MB
+[2022-09-08 15:26:44 base_net] (engine.py 78): INFO EPOCH 0 training takes 0:00:04
+[2022-09-08 15:26:46 base_net] (engine.py 95): INFO Testing 0/9
+[2022-09-08 15:26:46 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.7857    1.0000    0.8800       407
+        fake     0.0000    0.0000    0.0000       111
+
+    accuracy                         0.7857       518
+   macro avg     0.3929    0.5000    0.4400       518
+weighted avg     0.6173    0.7857    0.6914       518
+
+[2022-09-08 15:26:46 base_net] (engine.py 123): INFO Test epoch:0, avg_loss:0.6653589606285095, time_all:1.7561416625976562
+[2022-09-08 15:26:46 base_net] (engine.py 125): INFO best_auc:0.5, auc:0.5, f1:0.0, acc:0.7857142857142857, ap:0.21428571428571427, sen:0.0, spe:0.99999999997543
+[2022-09-08 15:26:49 base_net] (engine.py 68): INFO Train: [1/5][0/4]	lr 0.0002000	wd 0.0000	avg_loss 0.6763	time_all 2.9182486534118652	mem 9648MB
+[2022-09-08 15:26:50 base_net] (engine.py 78): INFO EPOCH 1 training takes 0:00:03
+[2022-09-08 15:26:51 base_net] (engine.py 95): INFO Testing 0/9
+[2022-09-08 15:26:52 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.8571    0.5012    0.6326       407
+        fake     0.2750    0.6937    0.3939       111
+
+    accuracy                         0.5425       518
+   macro avg     0.5661    0.5975    0.5132       518
+weighted avg     0.7324    0.5425    0.5814       518
+
+[2022-09-08 15:26:52 base_net] (engine.py 123): INFO Test epoch:1, avg_loss:0.698464572429657, time_all:1.6042249202728271
+[2022-09-08 15:26:52 base_net] (engine.py 125): INFO best_auc:0.5974610974610974, auc:0.5974610974610974, f1:0.5819609876880627, acc:0.5424710424710425, ap:0.25640283140283143, sen:0.6936936936311988, spe:0.501228501216186
+[2022-09-08 15:27:10 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': False, 'resume': '', 'manual_seed': 43, 'start_epochs': 0, 'epochs': 2, 'batch_size': 32, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'small', 'FF_img': {'train_pos_data_path': 'ff', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'None'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': '', 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': False, 'save_dir': './save/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-08 15:27:10 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-08 15:27:10 base_net] (train.py 42): INFO Start training
+[2022-09-08 15:27:14 base_net] (engine.py 68): INFO Train: [0/2][0/2]	lr 0.0002000	wd 0.0000	avg_loss 0.7111	time_all 4.344048261642456	mem 9648MB
+[2022-09-08 15:27:16 base_net] (engine.py 78): INFO EPOCH 0 training takes 0:00:05
+[2022-09-08 15:27:17 base_net] (engine.py 95): INFO Testing 0/5
+[2022-09-08 15:27:17 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.7954    1.0000    0.8860       206
+        fake     0.0000    0.0000    0.0000        53
+
+    accuracy                         0.7954       259
+   macro avg     0.3977    0.5000    0.4430       259
+weighted avg     0.6326    0.7954    0.7047       259
+
+[2022-09-08 15:27:17 base_net] (engine.py 123): INFO Test epoch:0, avg_loss:0.6810097098350525, time_all:1.8368299007415771
+[2022-09-08 15:27:17 base_net] (engine.py 125): INFO best_auc:0.5, auc:0.5, f1:0.0, acc:0.7953667953667953, ap:0.20463320463320464, sen:0.0, spe:0.9999999999514563
+[2022-09-08 15:27:21 base_net] (engine.py 68): INFO Train: [1/2][0/2]	lr 0.0002000	wd 0.0000	avg_loss 0.6756	time_all 3.3974385261535645	mem 9648MB
+[2022-09-08 15:27:21 base_net] (engine.py 78): INFO EPOCH 1 training takes 0:00:03
+[2022-09-08 15:27:22 base_net] (engine.py 95): INFO Testing 0/5
+[2022-09-08 15:27:23 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.7954    1.0000    0.8860       206
+        fake     0.0000    0.0000    0.0000        53
+
+    accuracy                         0.7954       259
+   macro avg     0.3977    0.5000    0.4430       259
+weighted avg     0.6326    0.7954    0.7047       259
+
+[2022-09-08 15:27:23 base_net] (engine.py 123): INFO Test epoch:1, avg_loss:0.6772200465202332, time_all:1.5585317611694336
+[2022-09-08 15:27:23 base_net] (engine.py 125): INFO best_auc:0.5, auc:0.5, f1:0.0, acc:0.7953667953667953, ap:0.20463320463320464, sen:0.0, spe:0.9999999999514563
+[2022-09-08 15:27:23 base_net] (train.py 61): INFO Training time 0:00:12

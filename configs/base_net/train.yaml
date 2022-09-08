@@ -1,0 +1,59 @@
+mode: 'train' 
+object: 'image'
+pretrained: True # backbone是否用ImageNet预训练的权重
+load_checkpoint: False
+resume: ''
+manual_seed: 43
+
+start_epochs: 0
+epochs: 2
+batch_size: 32
+print_freq: 10
+threshold: 0.5 
+
+dataset:
+  name: 'small'
+  FF_img:
+    train_pos_data_path: 'ff'
+    train_neg_data_path: ''
+    val_data_path: ''
+    image_size: ''
+    transform: 'None'
+  CDF_img:
+    train_pos_data_path: ''
+    train_neg_data_path: ''
+    val_data_path: ''
+    image_size: ''
+    transform: 'normal'
+  small:
+    train_pos_data_path: '/raid/lpy/data/my_annotations/small_train_real.txt'
+    train_neg_data_path: '/raid/lpy/data/my_annotations/small_train_fake.txt'
+    val_data_path: '/raid/lpy/data/my_annotations/small_val.txt'
+    image_size: 256
+    transform: 'resize'
+
+model:
+  name: 'base_net'
+  
+
+backbone:
+  name: 'resnet50'
+  resnet50:
+    drop_rate: 0.2
+
+opt:
+  name: 'adamw'
+  adamw:
+    lr: 2.0e-4
+    weight_decay: 1.0e-5
+
+sched:
+  name: 'MultiStepLR'
+  MultiStepLR:
+    milestones: [3, 6, 10, 15, 20]
+    gamma: 0.2
+
+criterion: 'CE'
+
+
+
