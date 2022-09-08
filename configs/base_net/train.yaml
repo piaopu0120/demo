@@ -5,25 +5,24 @@ load_checkpoint: False
 resume: ''
 manual_seed: 43
 
-start_epochs: 0
-epochs: 2
-batch_size: 32
+epochs: 1
+batch_size: 64
 print_freq: 10
 threshold: 0.5 
 
 dataset:
-  name: 'small'
+  name: 'FF_img'
   FF_img:
-    train_pos_data_path: 'ff'
-    train_neg_data_path: ''
-    val_data_path: ''
-    image_size: ''
-    transform: 'None'
+    train_pos_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt'
+    train_neg_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_fake.txt'
+    val_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt'
+    image_size: 256
+    transform: 'resize'
   CDF_img:
     train_pos_data_path: ''
     train_neg_data_path: ''
     val_data_path: ''
-    image_size: ''
+    image_size: 256
     transform: 'normal'
   small:
     train_pos_data_path: '/raid/lpy/data/my_annotations/small_train_real.txt'

@@ -21,7 +21,7 @@ def get_parameters():
     parser.add_argument("--num_workers", default=16, type=int)
     # save
     parser.add_argument('--save',default=False,action='store_true')
-    parser.add_argument('--save_dir',type=str,default='./save/')
+    parser.add_argument('--save_dir',type=str,default='./save_res50/')
     parser.add_argument('--save_name',type=str,default='loss.log')
     args = parser.parse_args()
 

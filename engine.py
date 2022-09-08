@@ -112,7 +112,7 @@ def validate(args, data_loader, model, criterion, logger, current_epoch, best_au
     TestMeter.update(loss.item(), len(targets))
 
     targets = targets.cpu().numpy()
-
+    
     sen, spe, f1, auc, ap, acc, scores = get_metric(
         args.threshold, targets, scores)
 

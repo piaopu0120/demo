@@ -65,7 +65,6 @@ class DeepFakeImageDataset(Dataset):
 
         except Exception as e:
             print(img_path, ' error!', e)
-            self.lost.append(img_info[0])
             return torch.randn((3, self.size, self.size)), torch.randn((3, self.size, self.size)), 0
 
     def load_val_sample(self, img_info):
@@ -82,7 +81,6 @@ class DeepFakeImageDataset(Dataset):
             return lab, img
         except Exception as e:
             print(img_info[0], ' error!', e)
-            self.lost.append(img_info[0])
             return torch.randn((3, self.size, self.size)), 0
 
     def __getitem__(self, index):
