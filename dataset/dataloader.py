@@ -2,14 +2,11 @@ import torch
 import numpy as np
 from .image_dataset import DeepFakeImageDataset
 from .transform import create_transform_resize
-from .gffd_transform import create_train_transforms as create_train_transforms_gffd
 
 
 def get_transform(conf, mode='train'):
     if mode == 'train':
-        if conf.transform == 'gffd':
-            return create_train_transforms_gffd(conf.image_size)
-        elif conf.transform == 'resize':
+        if conf.transform == 'resize':
             return create_transform_resize(conf.image_size)
     if mode == 'val':
         return create_transform_resize(conf.image_size)

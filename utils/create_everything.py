@@ -8,7 +8,6 @@
 from webbrowser import get
 from torch import optim
 from models.base_net import BaseNet
-from models.base_net_gj import BinaryClassifier
 from dataset import dataloader
 import os
 import sys
