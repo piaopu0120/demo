@@ -68,11 +68,11 @@ def generate_annotations(train_name,val_name,test_name):
     write_annotation(test_path,test_list,label)
 
 def shuffle():
-    path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val.txt'
+    path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test.txt'
     with open(path) as f:
         tmp = f.readlines()
     random.shuffle(tmp)
-    new_val_file_path = "/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt"
+    new_val_file_path = "/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test_shuffle.txt"
     f_val = open(new_val_file_path,"w")
     f_val.writelines(tmp)
     f_val.close()

@@ -1,4 +1,4 @@
 # .gitignore
 save/*
-save_50/*
+save_res50/*
 preprocess/*

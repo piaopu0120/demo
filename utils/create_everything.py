@@ -53,6 +53,8 @@ def create_dataloader(args):
     if args.mode == 'train' and args.object == 'image':
         # train_pos,train_neg,val
         return dataloader.create_train_image_dataloader(getattr(args.dataset, args.dataset.name), args)
+    if args.mode == 'test' and args.object == 'image':
+        return dataloader.create_test_image_dataloader(getattr(args.dataset, args.dataset.name), args)
 
 
 def create_model(args):

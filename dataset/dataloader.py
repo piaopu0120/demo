@@ -79,3 +79,26 @@ def create_train_image_dataloader(conf, args):
         collate_fn=dataset_val.collate_val_function,
         sampler=val_sampler)
     return [train_pos_dataloader, train_neg_dataloader, val_dataloader], [train_pos_sampler, train_neg_sampler]
+
+def create_test_image_dataloader(conf, args):
+    dataset_val = DeepFakeImageDataset(
+        data_file=conf.val_data_path,
+        mode='train',
+        transform=get_transform(conf, 'val'),
+        conf=conf,
+    )
+    val_sampler = None
+    if args.distributed:
+        val_sampler = torch.utils.data.distributed.DistributedSampler(
+            dataset_val)
+
+    val_dataloader = torch.utils.data.DataLoader(
+        dataset_val,
+        batch_size=args.batch_size * 2,
+        num_workers=args.num_workers//2,
+        shuffle=val_sampler is None,
+        pin_memory=False,
+        collate_fn=dataset_val.collate_val_function,
+        sampler=val_sampler)
+    return val_dataloader
+
