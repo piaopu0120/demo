@@ -32,7 +32,7 @@ def read_annotations(data_path):
         print("{} num: {}".format(data_path, len(data)))
     return data
 
-
+ 
 class DeepFakeImageDataset(Dataset):
 
     def __init__(self,

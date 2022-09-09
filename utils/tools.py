@@ -8,7 +8,7 @@ def save_checkpoint(args, epoch, model, auc, optimizer, lr_scheduler, logger):
                   'epoch': epoch,
                   'args': args}
 
-    save_path = os.path.join(args.save_dir, f'ckpt_epoch_{epoch}_{auc}.pth')
+    save_path = os.path.join(args.save_dir, f'ckpt_{args.model.name}_{args.backbone.name}_epoch_{epoch}_{auc:.5f}.pth')
     logger.info(f"{save_path} saving......")
     torch.save(save_state, save_path)
     logger.info(f"{save_path} saved !!!")

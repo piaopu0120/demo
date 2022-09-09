@@ -11,13 +11,20 @@ print_freq: 10
 threshold: 0.5 
 
 dataset:
-  name: 'FF_img'
-  FF_img:
+  name: 'FF_face'
+  FF_face:
     train_pos_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt'
     train_neg_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_fake.txt'
     val_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt'
     image_size: 256
     transform: 'resize'
+  FF_dir:
+    data_dir: 
+    image_size: 256
+    num_frames: 50
+    transform: 'resize'
+    split_dir : '/raid/lpy/data/FaceForensics++/splits/'
+    frame_dir : '/raid/lpy/data/FaceForensics++/method/c23/frames_64/'
   CDF_img:
     train_pos_data_path: ''
     train_neg_data_path: ''
