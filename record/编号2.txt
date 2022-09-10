@@ -1,0 +1,959 @@
+[2022-09-10 16:03:53 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': False, 'resume': '', 'manual_seed': 43, 'epochs': 30, 'batch_size': 64, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'FF_face', 'FF_face': {'train_pos_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt', 'train_neg_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_fake.txt', 'val_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt', 'image_size': 256, 'transform': 'gffd'}, 'FF_dir': {'data_dir': None, 'image_size': 256, 'num_frames': 50, 'transform': 'resize', 'split_dir': '/raid/lpy/data/FaceForensics++/splits/', 'frame_dir': '/raid/lpy/data/FaceForensics++/method/c23/frames_64/'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': 256, 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': True, 'save_dir': '.save/save_res50_gffdtransform/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-10 16:03:53 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-10 16:03:53 base_net] (train.py 42): INFO Start training
+[2022-09-10 16:04:09 base_net] (engine.py 68): INFO Train: [0/30][0/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6989	time_all 15.693470001220703	mem 16792MB
+[2022-09-10 16:04:14 base_net] (engine.py 68): INFO Train: [0/30][10/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6677	time_all 20.56476140022278	mem 16792MB
+[2022-09-10 16:04:19 base_net] (engine.py 68): INFO Train: [0/30][20/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6520	time_all 25.762853622436523	mem 16792MB
+[2022-09-10 16:04:24 base_net] (engine.py 68): INFO Train: [0/30][30/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6390	time_all 30.907647848129272	mem 16792MB
+[2022-09-10 16:04:29 base_net] (engine.py 68): INFO Train: [0/30][40/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6247	time_all 35.86738872528076	mem 16792MB
+[2022-09-10 16:04:34 base_net] (engine.py 68): INFO Train: [0/30][50/282]	lr 0.0002000	wd 0.0000	avg_loss 0.6101	time_all 40.52337384223938	mem 16792MB
+[2022-09-10 16:04:39 base_net] (engine.py 68): INFO Train: [0/30][60/282]	lr 0.0002000	wd 0.0000	avg_loss 0.5921	time_all 45.30072546005249	mem 16792MB
+[2022-09-10 16:04:43 base_net] (engine.py 68): INFO Train: [0/30][70/282]	lr 0.0002000	wd 0.0000	avg_loss 0.5679	time_all 49.93132567405701	mem 16792MB
+[2022-09-10 16:04:48 base_net] (engine.py 68): INFO Train: [0/30][80/282]	lr 0.0002000	wd 0.0000	avg_loss 0.5419	time_all 54.83644104003906	mem 16792MB
+[2022-09-10 16:04:53 base_net] (engine.py 68): INFO Train: [0/30][90/282]	lr 0.0002000	wd 0.0000	avg_loss 0.5172	time_all 59.383514642715454	mem 16792MB
+[2022-09-10 16:04:57 base_net] (engine.py 68): INFO Train: [0/30][100/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4979	time_all 63.82959032058716	mem 16792MB
+[2022-09-10 16:05:01 base_net] (engine.py 68): INFO Train: [0/30][110/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4844	time_all 67.98241829872131	mem 16792MB
+[2022-09-10 16:05:06 base_net] (engine.py 68): INFO Train: [0/30][120/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4698	time_all 72.32234454154968	mem 16792MB
+[2022-09-10 16:05:10 base_net] (engine.py 68): INFO Train: [0/30][130/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4577	time_all 76.30325818061829	mem 16792MB
+[2022-09-10 16:05:13 base_net] (engine.py 68): INFO Train: [0/30][140/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4459	time_all 80.11818170547485	mem 16792MB
+[2022-09-10 16:05:17 base_net] (engine.py 68): INFO Train: [0/30][150/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4369	time_all 83.8358404636383	mem 16792MB
+[2022-09-10 16:05:21 base_net] (engine.py 68): INFO Train: [0/30][160/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4267	time_all 87.61367392539978	mem 16792MB
+[2022-09-10 16:05:24 base_net] (engine.py 68): INFO Train: [0/30][170/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4201	time_all 91.15989947319031	mem 16792MB
+[2022-09-10 16:05:28 base_net] (engine.py 68): INFO Train: [0/30][180/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4134	time_all 94.74512076377869	mem 16792MB
+[2022-09-10 16:05:32 base_net] (engine.py 68): INFO Train: [0/30][190/282]	lr 0.0002000	wd 0.0000	avg_loss 0.4058	time_all 98.2031900882721	mem 16792MB
+[2022-09-10 16:05:35 base_net] (engine.py 68): INFO Train: [0/30][200/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3981	time_all 101.65022158622742	mem 16792MB
+[2022-09-10 16:05:38 base_net] (engine.py 68): INFO Train: [0/30][210/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3921	time_all 105.07465624809265	mem 16792MB
+[2022-09-10 16:05:42 base_net] (engine.py 68): INFO Train: [0/30][220/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3863	time_all 108.49936079978943	mem 16792MB
+[2022-09-10 16:05:45 base_net] (engine.py 68): INFO Train: [0/30][230/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3802	time_all 111.90902090072632	mem 16792MB
+[2022-09-10 16:05:49 base_net] (engine.py 68): INFO Train: [0/30][240/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3763	time_all 115.3084602355957	mem 16792MB
+[2022-09-10 16:05:52 base_net] (engine.py 68): INFO Train: [0/30][250/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3717	time_all 118.74001574516296	mem 16792MB
+[2022-09-10 16:05:55 base_net] (engine.py 68): INFO Train: [0/30][260/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3653	time_all 121.85586452484131	mem 16792MB
+[2022-09-10 16:05:58 base_net] (engine.py 68): INFO Train: [0/30][270/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3603	time_all 124.9509117603302	mem 16792MB
+[2022-09-10 16:06:01 base_net] (engine.py 68): INFO Train: [0/30][280/282]	lr 0.0002000	wd 0.0000	avg_loss 0.3562	time_all 128.04138278961182	mem 16792MB
+[2022-09-10 16:06:02 base_net] (engine.py 78): INFO EPOCH 0 training takes 0:02:09
+[2022-09-10 16:06:06 base_net] (engine.py 95): INFO Testing 0/55
+[2022-09-10 16:06:22 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9622    0.8710    0.9143      3504
+        fake     0.8819    0.9657    0.9219      3496
+
+    accuracy                         0.9183      7000
+   macro avg     0.9220    0.9183    0.9181      7000
+weighted avg     0.9221    0.9183    0.9181      7000
+
+[2022-09-10 16:06:22 base_net] (engine.py 123): INFO Test epoch:0, avg_loss:0.22300173342227936, time_all:19.60026788711548
+[2022-09-10 16:06:22 base_net] (engine.py 125): INFO best_auc:0.9183398117091418, auc:0.9183398117091418, f1:0.9158999463779278, acc:0.9182857142857143, ap:0.8687935868019511, sen:0.9656750572054758, spe:0.87100456620756
+[2022-09-10 16:06:22 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_0_0.91834.pth saving......
+[2022-09-10 16:06:23 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_0_0.91834.pth saved !!!
+[2022-09-10 16:06:35 base_net] (engine.py 68): INFO Train: [1/30][0/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2253	time_all 12.584978103637695	mem 16792MB
+[2022-09-10 16:06:41 base_net] (engine.py 68): INFO Train: [1/30][10/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2151	time_all 17.96751594543457	mem 16792MB
+[2022-09-10 16:06:46 base_net] (engine.py 68): INFO Train: [1/30][20/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2166	time_all 23.124539136886597	mem 16792MB
+[2022-09-10 16:06:50 base_net] (engine.py 68): INFO Train: [1/30][30/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2244	time_all 27.733311653137207	mem 16792MB
+[2022-09-10 16:06:55 base_net] (engine.py 68): INFO Train: [1/30][40/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2233	time_all 32.47233271598816	mem 16792MB
+[2022-09-10 16:07:00 base_net] (engine.py 68): INFO Train: [1/30][50/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2271	time_all 37.12064743041992	mem 16792MB
+[2022-09-10 16:07:05 base_net] (engine.py 68): INFO Train: [1/30][60/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2261	time_all 41.95626640319824	mem 16792MB
+[2022-09-10 16:07:09 base_net] (engine.py 68): INFO Train: [1/30][70/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2257	time_all 46.60830497741699	mem 16792MB
+[2022-09-10 16:07:14 base_net] (engine.py 68): INFO Train: [1/30][80/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2249	time_all 51.09940981864929	mem 16792MB
+[2022-09-10 16:07:18 base_net] (engine.py 68): INFO Train: [1/30][90/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2220	time_all 55.34569263458252	mem 16792MB
+[2022-09-10 16:07:22 base_net] (engine.py 68): INFO Train: [1/30][100/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2201	time_all 59.48968005180359	mem 16792MB
+[2022-09-10 16:07:26 base_net] (engine.py 68): INFO Train: [1/30][110/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2198	time_all 63.543246269226074	mem 16792MB
+[2022-09-10 16:07:30 base_net] (engine.py 68): INFO Train: [1/30][120/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2195	time_all 67.51205801963806	mem 16792MB
+[2022-09-10 16:07:34 base_net] (engine.py 68): INFO Train: [1/30][130/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2190	time_all 71.44918465614319	mem 16792MB
+[2022-09-10 16:07:38 base_net] (engine.py 68): INFO Train: [1/30][140/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2186	time_all 75.25352072715759	mem 16792MB
+[2022-09-10 16:07:42 base_net] (engine.py 68): INFO Train: [1/30][150/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2154	time_all 78.98755478858948	mem 16792MB
+[2022-09-10 16:07:45 base_net] (engine.py 68): INFO Train: [1/30][160/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2143	time_all 82.54413056373596	mem 16792MB
+[2022-09-10 16:07:49 base_net] (engine.py 68): INFO Train: [1/30][170/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2133	time_all 86.06248235702515	mem 16792MB
+[2022-09-10 16:07:52 base_net] (engine.py 68): INFO Train: [1/30][180/282]	lr 0.0002000	wd 0.0000	avg_loss 0.2126	time_all 89.53881573677063	mem 16792MB
+[2022-09-10 16:09:19 base_net] (train.py 94): INFO {'_metadata': ContainerMetadata(ref_type=<class 'dict'>, object_type=None, optional=True, key=None, flags={}, resolver_cache=defaultdict(<class 'dict'>, {}), key_type=None, element_type=None), '_parent': None, '_content': {'mode': 'train', 'object': 'image', 'pretrained': True, 'load_checkpoint': False, 'resume': '', 'manual_seed': 43, 'epochs': 30, 'batch_size': 128, 'print_freq': 10, 'threshold': 0.5, 'dataset': {'name': 'FF_face', 'FF_face': {'train_pos_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt', 'train_neg_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_fake.txt', 'val_data_path': '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt', 'image_size': 256, 'transform': 'gffd'}, 'FF_dir': {'data_dir': None, 'image_size': 256, 'num_frames': 50, 'transform': 'resize', 'split_dir': '/raid/lpy/data/FaceForensics++/splits/', 'frame_dir': '/raid/lpy/data/FaceForensics++/method/c23/frames_64/'}, 'CDF_img': {'train_pos_data_path': '', 'train_neg_data_path': '', 'val_data_path': '', 'image_size': 256, 'transform': 'normal'}, 'small': {'train_pos_data_path': '/raid/lpy/data/my_annotations/small_train_real.txt', 'train_neg_data_path': '/raid/lpy/data/my_annotations/small_train_fake.txt', 'val_data_path': '/raid/lpy/data/my_annotations/small_val.txt', 'image_size': 256, 'transform': 'resize'}}, 'model': {'name': 'base_net'}, 'backbone': {'name': 'resnet50', 'resnet50': {'drop_rate': 0.2}}, 'opt': {'name': 'adamw', 'adamw': {'lr': 0.0002, 'weight_decay': 1e-05}}, 'sched': {'name': 'MultiStepLR', 'MultiStepLR': {'milestones': [3, 6, 10, 15, 20], 'gamma': 0.2}}, 'criterion': 'CE', 'debug': False, 'config': 'configs/base_net/train.yaml', 'cuda': True, 'local_rank': 0, 'num_workers': 16, 'save': True, 'save_dir': '.save/save_res50_gffdtransform/', 'save_name': 'loss.log', 'distributed': True}}
+[2022-09-10 16:09:19 base_net] (train.py 17): INFO Creating model base_net, backbone: resnet50
+[2022-09-10 16:09:20 base_net] (train.py 42): INFO Start training
+[2022-09-10 16:09:49 base_net] (engine.py 68): INFO Train: [0/30][0/141]	lr 0.0002000	wd 0.0000	avg_loss 0.7057	time_all 29.0239577293396	mem 34092MB
+[2022-09-10 16:09:57 base_net] (engine.py 68): INFO Train: [0/30][10/141]	lr 0.0002000	wd 0.0000	avg_loss 0.6615	time_all 37.15714693069458	mem 34092MB
+[2022-09-10 16:10:05 base_net] (engine.py 68): INFO Train: [0/30][20/141]	lr 0.0002000	wd 0.0000	avg_loss 0.6417	time_all 45.45770859718323	mem 34092MB
+[2022-09-10 16:10:14 base_net] (engine.py 68): INFO Train: [0/30][30/141]	lr 0.0002000	wd 0.0000	avg_loss 0.6200	time_all 53.95168113708496	mem 34092MB
+[2022-09-10 16:10:22 base_net] (engine.py 68): INFO Train: [0/30][40/141]	lr 0.0002000	wd 0.0000	avg_loss 0.6009	time_all 61.93709349632263	mem 34092MB
+[2022-09-10 16:10:29 base_net] (engine.py 68): INFO Train: [0/30][50/141]	lr 0.0002000	wd 0.0000	avg_loss 0.5798	time_all 69.27893710136414	mem 34092MB
+[2022-09-10 16:10:36 base_net] (engine.py 68): INFO Train: [0/30][60/141]	lr 0.0002000	wd 0.0000	avg_loss 0.5555	time_all 76.4124391078949	mem 34092MB
+[2022-09-10 16:10:43 base_net] (engine.py 68): INFO Train: [0/30][70/141]	lr 0.0002000	wd 0.0000	avg_loss 0.5316	time_all 83.08623719215393	mem 34092MB
+[2022-09-10 16:10:50 base_net] (engine.py 68): INFO Train: [0/30][80/141]	lr 0.0002000	wd 0.0000	avg_loss 0.5088	time_all 89.81753468513489	mem 34092MB
+[2022-09-10 16:10:56 base_net] (engine.py 68): INFO Train: [0/30][90/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4909	time_all 96.28566813468933	mem 34092MB
+[2022-09-10 16:11:03 base_net] (engine.py 68): INFO Train: [0/30][100/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4725	time_all 102.75236320495605	mem 34092MB
+[2022-09-10 16:11:09 base_net] (engine.py 68): INFO Train: [0/30][110/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4598	time_all 109.20196747779846	mem 34092MB
+[2022-09-10 16:11:15 base_net] (engine.py 68): INFO Train: [0/30][120/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4458	time_all 115.15062117576599	mem 34092MB
+[2022-09-10 16:11:21 base_net] (engine.py 68): INFO Train: [0/30][130/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4338	time_all 121.16184663772583	mem 34092MB
+[2022-09-10 16:11:28 base_net] (engine.py 68): INFO Train: [0/30][140/141]	lr 0.0002000	wd 0.0000	avg_loss 0.4216	time_all 128.449059009552	mem 34092MB
+[2022-09-10 16:11:29 base_net] (engine.py 78): INFO EPOCH 0 training takes 0:02:09
+[2022-09-10 16:11:34 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:11:48 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9287    0.8884    0.9081      3504
+        fake     0.8928    0.9316    0.9118      3496
+
+    accuracy                         0.9100      7000
+   macro avg     0.9108    0.9100    0.9100      7000
+weighted avg     0.9108    0.9100    0.9100      7000
+
+[2022-09-10 16:11:48 base_net] (engine.py 123): INFO Test epoch:0, avg_loss:0.23903149366378784, time_all:19.149957418441772
+[2022-09-10 16:11:48 base_net] (engine.py 125): INFO best_auc:0.9100246988077699, auc:0.9100246988077699, f1:0.9095114654109886, acc:0.91, ap:0.8659243699745646, sen:0.9316361556037425, spe:0.888413242006597
+[2022-09-10 16:11:48 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_0_0.91002.pth saving......
+[2022-09-10 16:11:49 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_0_0.91002.pth saved !!!
+[2022-09-10 16:12:16 base_net] (engine.py 68): INFO Train: [1/30][0/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2517	time_all 27.56027054786682	mem 34092MB
+[2022-09-10 16:12:25 base_net] (engine.py 68): INFO Train: [1/30][10/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2641	time_all 36.39048361778259	mem 34092MB
+[2022-09-10 16:12:34 base_net] (engine.py 68): INFO Train: [1/30][20/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2622	time_all 45.690041303634644	mem 34092MB
+[2022-09-10 16:12:43 base_net] (engine.py 68): INFO Train: [1/30][30/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2583	time_all 54.78156018257141	mem 34092MB
+[2022-09-10 16:12:52 base_net] (engine.py 68): INFO Train: [1/30][40/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2512	time_all 63.25357747077942	mem 34092MB
+[2022-09-10 16:12:59 base_net] (engine.py 68): INFO Train: [1/30][50/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2503	time_all 70.57883071899414	mem 34092MB
+[2022-09-10 16:13:06 base_net] (engine.py 68): INFO Train: [1/30][60/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2514	time_all 77.57510733604431	mem 34092MB
+[2022-09-10 16:13:13 base_net] (engine.py 68): INFO Train: [1/30][70/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2488	time_all 84.69471049308777	mem 34092MB
+[2022-09-10 16:13:20 base_net] (engine.py 68): INFO Train: [1/30][80/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2455	time_all 91.44237542152405	mem 34092MB
+[2022-09-10 16:13:27 base_net] (engine.py 68): INFO Train: [1/30][90/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2438	time_all 98.05346345901489	mem 34092MB
+[2022-09-10 16:13:33 base_net] (engine.py 68): INFO Train: [1/30][100/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2417	time_all 104.6138117313385	mem 34092MB
+[2022-09-10 16:13:40 base_net] (engine.py 68): INFO Train: [1/30][110/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2391	time_all 111.25721001625061	mem 34092MB
+[2022-09-10 16:13:46 base_net] (engine.py 68): INFO Train: [1/30][120/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2370	time_all 117.25247764587402	mem 34092MB
+[2022-09-10 16:13:52 base_net] (engine.py 68): INFO Train: [1/30][130/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2343	time_all 123.19632196426392	mem 34092MB
+[2022-09-10 16:13:58 base_net] (engine.py 68): INFO Train: [1/30][140/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2314	time_all 128.93740057945251	mem 34092MB
+[2022-09-10 16:13:58 base_net] (engine.py 78): INFO EPOCH 1 training takes 0:02:09
+[2022-09-10 16:14:04 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:14:18 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9541    0.8901    0.9210      3504
+        fake     0.8968    0.9571    0.9260      3496
+
+    accuracy                         0.9236      7000
+   macro avg     0.9255    0.9236    0.9235      7000
+weighted avg     0.9255    0.9236    0.9235      7000
+
+[2022-09-10 16:14:18 base_net] (engine.py 123): INFO Test epoch:1, avg_loss:0.20466193556785583, time_all:20.256935834884644
+[2022-09-10 16:14:18 base_net] (engine.py 125): INFO best_auc:0.9236096961432766, auc:0.9236096961432766, f1:0.9223957779062657, acc:0.9235714285714286, ap:0.8797603663289882, sen:0.9570938215075598, spe:0.8901255707737155
+[2022-09-10 16:14:18 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_1_0.92361.pth saving......
+[2022-09-10 16:14:19 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_1_0.92361.pth saved !!!
+[2022-09-10 16:14:39 base_net] (engine.py 68): INFO Train: [2/30][0/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2505	time_all 20.038880109786987	mem 34092MB
+[2022-09-10 16:14:53 base_net] (engine.py 68): INFO Train: [2/30][10/141]	lr 0.0002000	wd 0.0000	avg_loss 0.2023	time_all 34.68674874305725	mem 34092MB
+[2022-09-10 16:15:02 base_net] (engine.py 68): INFO Train: [2/30][20/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1983	time_all 43.440221548080444	mem 34092MB
+[2022-09-10 16:15:11 base_net] (engine.py 68): INFO Train: [2/30][30/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1944	time_all 52.37110757827759	mem 34092MB
+[2022-09-10 16:15:19 base_net] (engine.py 68): INFO Train: [2/30][40/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1922	time_all 60.43376851081848	mem 34092MB
+[2022-09-10 16:15:27 base_net] (engine.py 68): INFO Train: [2/30][50/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1914	time_all 68.34759306907654	mem 34092MB
+[2022-09-10 16:15:34 base_net] (engine.py 68): INFO Train: [2/30][60/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1902	time_all 75.44114208221436	mem 34092MB
+[2022-09-10 16:15:41 base_net] (engine.py 68): INFO Train: [2/30][70/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1894	time_all 82.58516073226929	mem 34092MB
+[2022-09-10 16:15:48 base_net] (engine.py 68): INFO Train: [2/30][80/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1892	time_all 89.37193298339844	mem 34092MB
+[2022-09-10 16:15:55 base_net] (engine.py 68): INFO Train: [2/30][90/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1878	time_all 95.84119415283203	mem 34092MB
+[2022-09-10 16:16:01 base_net] (engine.py 68): INFO Train: [2/30][100/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1863	time_all 102.55225014686584	mem 34092MB
+[2022-09-10 16:16:08 base_net] (engine.py 68): INFO Train: [2/30][110/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1858	time_all 109.03938603401184	mem 34092MB
+[2022-09-10 16:16:14 base_net] (engine.py 68): INFO Train: [2/30][120/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1854	time_all 115.04300498962402	mem 34092MB
+[2022-09-10 16:16:20 base_net] (engine.py 68): INFO Train: [2/30][130/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1842	time_all 121.0623300075531	mem 34092MB
+[2022-09-10 16:16:26 base_net] (engine.py 68): INFO Train: [2/30][140/141]	lr 0.0002000	wd 0.0000	avg_loss 0.1828	time_all 126.84222316741943	mem 34092MB
+[2022-09-10 16:16:26 base_net] (engine.py 78): INFO EPOCH 2 training takes 0:02:07
+[2022-09-10 16:16:32 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:16:45 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9556    0.8964    0.9250      3504
+        fake     0.9022    0.9582    0.9294      3496
+
+    accuracy                         0.9273      7000
+   macro avg     0.9289    0.9273    0.9272      7000
+weighted avg     0.9289    0.9273    0.9272      7000
+
+[2022-09-10 16:16:45 base_net] (engine.py 123): INFO Test epoch:2, avg_loss:0.21054032444953918, time_all:18.96796751022339
+[2022-09-10 16:16:45 base_net] (engine.py 125): INFO best_auc:0.9273210479295321, auc:0.9273210479295321, f1:0.9262902753821624, acc:0.9272857142857143, ap:0.8854133653199968, sen:0.958237986267282, spe:0.8964041095864829
+[2022-09-10 16:16:45 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_2_0.92732.pth saving......
+[2022-09-10 16:16:46 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_2_0.92732.pth saved !!!
+[2022-09-10 16:17:07 base_net] (engine.py 68): INFO Train: [3/30][0/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1307	time_all 21.600621938705444	mem 34092MB
+[2022-09-10 16:17:20 base_net] (engine.py 68): INFO Train: [3/30][10/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1468	time_all 34.86454677581787	mem 34092MB
+[2022-09-10 16:17:30 base_net] (engine.py 68): INFO Train: [3/30][20/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1413	time_all 43.99525451660156	mem 34092MB
+[2022-09-10 16:17:38 base_net] (engine.py 68): INFO Train: [3/30][30/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1399	time_all 52.28262662887573	mem 34092MB
+[2022-09-10 16:17:46 base_net] (engine.py 68): INFO Train: [3/30][40/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1423	time_all 60.413716077804565	mem 34092MB
+[2022-09-10 16:17:54 base_net] (engine.py 68): INFO Train: [3/30][50/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1412	time_all 68.6307852268219	mem 34092MB
+[2022-09-10 16:18:01 base_net] (engine.py 68): INFO Train: [3/30][60/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1389	time_all 75.84841799736023	mem 34092MB
+[2022-09-10 16:18:09 base_net] (engine.py 68): INFO Train: [3/30][70/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1372	time_all 83.21408128738403	mem 34092MB
+[2022-09-10 16:18:16 base_net] (engine.py 68): INFO Train: [3/30][80/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1379	time_all 90.10007095336914	mem 34092MB
+[2022-09-10 16:18:22 base_net] (engine.py 68): INFO Train: [3/30][90/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1374	time_all 96.93092346191406	mem 34092MB
+[2022-09-10 16:18:29 base_net] (engine.py 68): INFO Train: [3/30][100/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1377	time_all 103.56478357315063	mem 34092MB
+[2022-09-10 16:18:36 base_net] (engine.py 68): INFO Train: [3/30][110/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1373	time_all 110.07976198196411	mem 34092MB
+[2022-09-10 16:18:42 base_net] (engine.py 68): INFO Train: [3/30][120/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1377	time_all 116.09568428993225	mem 34092MB
+[2022-09-10 16:18:48 base_net] (engine.py 68): INFO Train: [3/30][130/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1360	time_all 122.01279139518738	mem 34092MB
+[2022-09-10 16:18:53 base_net] (engine.py 68): INFO Train: [3/30][140/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1351	time_all 127.7478015422821	mem 34092MB
+[2022-09-10 16:18:54 base_net] (engine.py 78): INFO EPOCH 3 training takes 0:02:08
+[2022-09-10 16:19:00 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:19:14 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9525    0.9041    0.9277      3504
+        fake     0.9085    0.9548    0.9311      3496
+
+    accuracy                         0.9294      7000
+   macro avg     0.9305    0.9295    0.9294      7000
+weighted avg     0.9305    0.9294    0.9294      7000
+
+[2022-09-10 16:19:14 base_net] (engine.py 123): INFO Test epoch:3, avg_loss:0.21699638664722443, time_all:19.815382480621338
+[2022-09-10 16:19:14 base_net] (engine.py 125): INFO best_auc:0.9294575405159713, auc:0.9294575405159713, f1:0.9287662570324006, acc:0.9294285714285714, ap:0.8900566578216861, sen:0.9548054919881156, spe:0.9041095890385157
+[2022-09-10 16:19:14 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_3_0.92946.pth saving......
+[2022-09-10 16:19:14 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_3_0.92946.pth saved !!!
+[2022-09-10 16:19:40 base_net] (engine.py 68): INFO Train: [4/30][0/141]	lr 0.0000400	wd 0.0000	avg_loss 0.0924	time_all 26.15263342857361	mem 34092MB
+[2022-09-10 16:19:50 base_net] (engine.py 68): INFO Train: [4/30][10/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1214	time_all 36.03756594657898	mem 34092MB
+[2022-09-10 16:20:00 base_net] (engine.py 68): INFO Train: [4/30][20/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1194	time_all 45.768627405166626	mem 34092MB
+[2022-09-10 16:20:08 base_net] (engine.py 68): INFO Train: [4/30][30/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1240	time_all 54.437947511672974	mem 34092MB
+[2022-09-10 16:20:16 base_net] (engine.py 68): INFO Train: [4/30][40/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1221	time_all 62.11142611503601	mem 34092MB
+[2022-09-10 16:20:24 base_net] (engine.py 68): INFO Train: [4/30][50/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1212	time_all 70.38194966316223	mem 34092MB
+[2022-09-10 16:20:31 base_net] (engine.py 68): INFO Train: [4/30][60/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1223	time_all 77.38713455200195	mem 34092MB
+[2022-09-10 16:20:38 base_net] (engine.py 68): INFO Train: [4/30][70/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1224	time_all 84.21138381958008	mem 34092MB
+[2022-09-10 16:20:45 base_net] (engine.py 68): INFO Train: [4/30][80/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1208	time_all 91.03040027618408	mem 34092MB
+[2022-09-10 16:20:52 base_net] (engine.py 68): INFO Train: [4/30][90/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1203	time_all 97.54048037528992	mem 34092MB
+[2022-09-10 16:20:58 base_net] (engine.py 68): INFO Train: [4/30][100/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1193	time_all 104.31404757499695	mem 34092MB
+[2022-09-10 16:21:05 base_net] (engine.py 68): INFO Train: [4/30][110/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1200	time_all 110.88436436653137	mem 34092MB
+[2022-09-10 16:21:11 base_net] (engine.py 68): INFO Train: [4/30][120/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1190	time_all 116.86148500442505	mem 34092MB
+[2022-09-10 16:21:17 base_net] (engine.py 68): INFO Train: [4/30][130/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1174	time_all 122.83772206306458	mem 34092MB
+[2022-09-10 16:21:23 base_net] (engine.py 68): INFO Train: [4/30][140/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1179	time_all 128.59945440292358	mem 34092MB
+[2022-09-10 16:21:23 base_net] (engine.py 78): INFO EPOCH 4 training takes 0:02:09
+[2022-09-10 16:21:30 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:21:43 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9423    0.9141    0.9280      3504
+        fake     0.9164    0.9439    0.9300      3496
+
+    accuracy                         0.9290      7000
+   macro avg     0.9294    0.9290    0.9290      7000
+weighted avg     0.9294    0.9290    0.9290      7000
+
+[2022-09-10 16:21:43 base_net] (engine.py 123): INFO Test epoch:4, avg_loss:0.2092622071504593, time_all:19.651848793029785
+[2022-09-10 16:21:43 base_net] (engine.py 125): INFO best_auc:0.9294575405159713, auc:0.9290170501447187, f1:0.9287774712453926, acc:0.929, ap:0.8930343122333805, sen:0.9439359267707553, spe:0.9140981735133731
+[2022-09-10 16:22:05 base_net] (engine.py 68): INFO Train: [5/30][0/141]	lr 0.0000400	wd 0.0000	avg_loss 0.0976	time_all 22.126116275787354	mem 34092MB
+[2022-09-10 16:22:18 base_net] (engine.py 68): INFO Train: [5/30][10/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1038	time_all 34.84960103034973	mem 34092MB
+[2022-09-10 16:22:26 base_net] (engine.py 68): INFO Train: [5/30][20/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1069	time_all 42.95720672607422	mem 34092MB
+[2022-09-10 16:22:35 base_net] (engine.py 68): INFO Train: [5/30][30/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1073	time_all 51.65384531021118	mem 34092MB
+[2022-09-10 16:22:43 base_net] (engine.py 68): INFO Train: [5/30][40/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1101	time_all 59.576932430267334	mem 34092MB
+[2022-09-10 16:22:50 base_net] (engine.py 68): INFO Train: [5/30][50/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1095	time_all 66.80785250663757	mem 34092MB
+[2022-09-10 16:22:57 base_net] (engine.py 68): INFO Train: [5/30][60/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1095	time_all 74.04714488983154	mem 34092MB
+[2022-09-10 16:23:04 base_net] (engine.py 68): INFO Train: [5/30][70/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1114	time_all 80.88487029075623	mem 34092MB
+[2022-09-10 16:23:11 base_net] (engine.py 68): INFO Train: [5/30][80/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1115	time_all 87.64008355140686	mem 34092MB
+[2022-09-10 16:23:17 base_net] (engine.py 68): INFO Train: [5/30][90/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1119	time_all 94.15897274017334	mem 34092MB
+[2022-09-10 16:23:24 base_net] (engine.py 68): INFO Train: [5/30][100/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1108	time_all 100.8618893623352	mem 34092MB
+[2022-09-10 16:23:30 base_net] (engine.py 68): INFO Train: [5/30][110/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1111	time_all 107.29729962348938	mem 34092MB
+[2022-09-10 16:23:36 base_net] (engine.py 68): INFO Train: [5/30][120/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1120	time_all 113.5064160823822	mem 34092MB
+[2022-09-10 16:23:42 base_net] (engine.py 68): INFO Train: [5/30][130/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1121	time_all 119.48828434944153	mem 34092MB
+[2022-09-10 16:23:48 base_net] (engine.py 68): INFO Train: [5/30][140/141]	lr 0.0000400	wd 0.0000	avg_loss 0.1116	time_all 125.25070190429688	mem 34092MB
+[2022-09-10 16:23:49 base_net] (engine.py 78): INFO EPOCH 5 training takes 0:02:05
+[2022-09-10 16:23:55 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:24:08 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9638    0.9053    0.9336      3504
+        fake     0.9105    0.9660    0.9374      3496
+
+    accuracy                         0.9356      7000
+   macro avg     0.9372    0.9356    0.9355      7000
+weighted avg     0.9372    0.9356    0.9355      7000
+
+[2022-09-10 16:24:08 base_net] (engine.py 123): INFO Test epoch:5, avg_loss:0.2226686030626297, time_all:19.472044706344604
+[2022-09-10 16:24:08 base_net] (engine.py 125): INFO best_auc:0.9356061199753404, auc:0.9356061199753404, f1:0.9346212774247455, acc:0.9355714285714286, ap:0.896495990641849, sen:0.9659610983954063, spe:0.9052511415499279
+[2022-09-10 16:24:08 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_5_0.93561.pth saving......
+[2022-09-10 16:24:09 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_5_0.93561.pth saved !!!
+[2022-09-10 16:24:33 base_net] (engine.py 68): INFO Train: [6/30][0/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1230	time_all 24.72613549232483	mem 34092MB
+[2022-09-10 16:24:45 base_net] (engine.py 68): INFO Train: [6/30][10/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1059	time_all 36.66950583457947	mem 34092MB
+[2022-09-10 16:24:55 base_net] (engine.py 68): INFO Train: [6/30][20/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1033	time_all 45.80507206916809	mem 34092MB
+[2022-09-10 16:25:03 base_net] (engine.py 68): INFO Train: [6/30][30/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1029	time_all 54.309428453445435	mem 34092MB
+[2022-09-10 16:25:11 base_net] (engine.py 68): INFO Train: [6/30][40/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1059	time_all 62.42274880409241	mem 34092MB
+[2022-09-10 16:25:19 base_net] (engine.py 68): INFO Train: [6/30][50/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1081	time_all 69.94456338882446	mem 34092MB
+[2022-09-10 16:25:26 base_net] (engine.py 68): INFO Train: [6/30][60/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1074	time_all 77.25983333587646	mem 34092MB
+[2022-09-10 16:25:33 base_net] (engine.py 68): INFO Train: [6/30][70/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1073	time_all 84.33107614517212	mem 34092MB
+[2022-09-10 16:25:40 base_net] (engine.py 68): INFO Train: [6/30][80/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1056	time_all 91.12108874320984	mem 34092MB
+[2022-09-10 16:25:47 base_net] (engine.py 68): INFO Train: [6/30][90/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1043	time_all 97.87190818786621	mem 34092MB
+[2022-09-10 16:25:53 base_net] (engine.py 68): INFO Train: [6/30][100/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1036	time_all 104.64388060569763	mem 34092MB
+[2022-09-10 16:26:00 base_net] (engine.py 68): INFO Train: [6/30][110/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1031	time_all 111.04613089561462	mem 34092MB
+[2022-09-10 16:26:06 base_net] (engine.py 68): INFO Train: [6/30][120/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1030	time_all 117.13147473335266	mem 34092MB
+[2022-09-10 16:26:12 base_net] (engine.py 68): INFO Train: [6/30][130/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1022	time_all 123.12439346313477	mem 34092MB
+[2022-09-10 16:26:18 base_net] (engine.py 68): INFO Train: [6/30][140/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1021	time_all 128.90661144256592	mem 34092MB
+[2022-09-10 16:26:18 base_net] (engine.py 78): INFO EPOCH 6 training takes 0:02:09
+[2022-09-10 16:26:25 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:26:40 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9557    0.9104    0.9325      3504
+        fake     0.9143    0.9577    0.9355      3496
+
+    accuracy                         0.9340      7000
+   macro avg     0.9350    0.9340    0.9340      7000
+weighted avg     0.9350    0.9340    0.9340      7000
+
+[2022-09-10 16:26:40 base_net] (engine.py 123): INFO Test epoch:6, avg_loss:0.21397699415683746, time_all:21.401780128479004
+[2022-09-10 16:26:40 base_net] (engine.py 125): INFO best_auc:0.9356061199753404, auc:0.9340270158720206, f1:0.9334287494196277, acc:0.934, ap:0.8966932247628069, sen:0.9576659038874209, spe:0.9103881278512832
+[2022-09-10 16:27:09 base_net] (engine.py 68): INFO Train: [7/30][0/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0604	time_all 29.399405002593994	mem 34092MB
+[2022-09-10 16:27:19 base_net] (engine.py 68): INFO Train: [7/30][10/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1037	time_all 39.1808967590332	mem 34092MB
+[2022-09-10 16:27:28 base_net] (engine.py 68): INFO Train: [7/30][20/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1096	time_all 48.19240045547485	mem 34092MB
+[2022-09-10 16:27:37 base_net] (engine.py 68): INFO Train: [7/30][30/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1092	time_all 56.999934673309326	mem 34092MB
+[2022-09-10 16:27:45 base_net] (engine.py 68): INFO Train: [7/30][40/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1065	time_all 65.13612818717957	mem 34092MB
+[2022-09-10 16:27:53 base_net] (engine.py 68): INFO Train: [7/30][50/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1032	time_all 73.18695735931396	mem 34092MB
+[2022-09-10 16:28:00 base_net] (engine.py 68): INFO Train: [7/30][60/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1030	time_all 80.03905606269836	mem 34092MB
+[2022-09-10 16:28:07 base_net] (engine.py 68): INFO Train: [7/30][70/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1025	time_all 87.26354551315308	mem 34092MB
+[2022-09-10 16:28:14 base_net] (engine.py 68): INFO Train: [7/30][80/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1011	time_all 94.3193666934967	mem 34092MB
+[2022-09-10 16:28:21 base_net] (engine.py 68): INFO Train: [7/30][90/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1008	time_all 100.94094800949097	mem 34092MB
+[2022-09-10 16:28:27 base_net] (engine.py 68): INFO Train: [7/30][100/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0999	time_all 107.71526384353638	mem 34092MB
+[2022-09-10 16:28:34 base_net] (engine.py 68): INFO Train: [7/30][110/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0988	time_all 114.22776794433594	mem 34092MB
+[2022-09-10 16:28:40 base_net] (engine.py 68): INFO Train: [7/30][120/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0989	time_all 120.37202167510986	mem 34092MB
+[2022-09-10 16:28:46 base_net] (engine.py 68): INFO Train: [7/30][130/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0991	time_all 126.34806418418884	mem 34092MB
+[2022-09-10 16:28:52 base_net] (engine.py 68): INFO Train: [7/30][140/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0990	time_all 132.11420440673828	mem 34092MB
+[2022-09-10 16:28:52 base_net] (engine.py 78): INFO EPOCH 7 training takes 0:02:12
+[2022-09-10 16:28:58 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:29:12 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9597    0.9112    0.9349      3504
+        fake     0.9153    0.9617    0.9379      3496
+
+    accuracy                         0.9364      7000
+   macro avg     0.9375    0.9365    0.9364      7000
+weighted avg     0.9376    0.9364    0.9364      7000
+
+[2022-09-10 16:29:12 base_net] (engine.py 123): INFO Test epoch:7, avg_loss:0.221261665225029, time_all:19.556179761886597
+[2022-09-10 16:29:12 base_net] (engine.py 125): INFO best_auc:0.9364573863933211, auc:0.9364573863933211, f1:0.9357785513190789, acc:0.9364285714285714, ap:0.8993868417893062, sen:0.9616704805464483, spe:0.9112442922348424
+[2022-09-10 16:29:12 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_7_0.93646.pth saving......
+[2022-09-10 16:29:12 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_7_0.93646.pth saved !!!
+[2022-09-10 16:29:35 base_net] (engine.py 68): INFO Train: [8/30][0/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0716	time_all 22.368626356124878	mem 34092MB
+[2022-09-10 16:29:48 base_net] (engine.py 68): INFO Train: [8/30][10/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0981	time_all 36.09762215614319	mem 34092MB
+[2022-09-10 16:29:57 base_net] (engine.py 68): INFO Train: [8/30][20/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1027	time_all 44.72316241264343	mem 34092MB
+[2022-09-10 16:30:06 base_net] (engine.py 68): INFO Train: [8/30][30/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0987	time_all 53.35732674598694	mem 34092MB
+[2022-09-10 16:30:13 base_net] (engine.py 68): INFO Train: [8/30][40/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0998	time_all 60.94900298118591	mem 34092MB
+[2022-09-10 16:30:21 base_net] (engine.py 68): INFO Train: [8/30][50/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0973	time_all 68.90297603607178	mem 34092MB
+[2022-09-10 16:30:28 base_net] (engine.py 68): INFO Train: [8/30][60/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0967	time_all 75.76103663444519	mem 34092MB
+[2022-09-10 16:30:35 base_net] (engine.py 68): INFO Train: [8/30][70/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0963	time_all 82.9733202457428	mem 34092MB
+[2022-09-10 16:30:42 base_net] (engine.py 68): INFO Train: [8/30][80/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0972	time_all 90.12628865242004	mem 34092MB
+[2022-09-10 16:30:49 base_net] (engine.py 68): INFO Train: [8/30][90/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0956	time_all 96.55149722099304	mem 34092MB
+[2022-09-10 16:30:56 base_net] (engine.py 68): INFO Train: [8/30][100/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0958	time_all 103.22727227210999	mem 34092MB
+[2022-09-10 16:31:02 base_net] (engine.py 68): INFO Train: [8/30][110/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0951	time_all 109.76893734931946	mem 34092MB
+[2022-09-10 16:31:08 base_net] (engine.py 68): INFO Train: [8/30][120/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0955	time_all 115.75047492980957	mem 34092MB
+[2022-09-10 16:31:14 base_net] (engine.py 68): INFO Train: [8/30][130/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0963	time_all 121.74497771263123	mem 34092MB
+[2022-09-10 16:31:20 base_net] (engine.py 68): INFO Train: [8/30][140/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0963	time_all 127.50671029090881	mem 34092MB
+[2022-09-10 16:31:20 base_net] (engine.py 78): INFO EPOCH 8 training takes 0:02:08
+[2022-09-10 16:31:27 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:31:37 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9571    0.9101    0.9330      3504
+        fake     0.9141    0.9591    0.9361      3496
+
+    accuracy                         0.9346      7000
+   macro avg     0.9356    0.9346    0.9345      7000
+weighted avg     0.9356    0.9346    0.9345      7000
+
+[2022-09-10 16:31:37 base_net] (engine.py 123): INFO Test epoch:8, avg_loss:0.22039814293384552, time_all:16.91502833366394
+[2022-09-10 16:31:37 base_net] (engine.py 125): INFO best_auc:0.9364573863933211, auc:0.9345994247829222, f1:0.9339573448015336, acc:0.9345714285714286, ap:0.8971595573317629, sen:0.9590961098370736, spe:0.9101027397234301
+[2022-09-10 16:32:05 base_net] (engine.py 68): INFO Train: [9/30][0/141]	lr 0.0000080	wd 0.0000	avg_loss 0.1110	time_all 27.627723217010498	mem 34092MB
+[2022-09-10 16:32:18 base_net] (engine.py 68): INFO Train: [9/30][10/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0918	time_all 40.777345418930054	mem 34092MB
+[2022-09-10 16:32:27 base_net] (engine.py 68): INFO Train: [9/30][20/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0911	time_all 49.32624840736389	mem 34092MB
+[2022-09-10 16:32:36 base_net] (engine.py 68): INFO Train: [9/30][30/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0916	time_all 58.35539436340332	mem 34092MB
+[2022-09-10 16:32:44 base_net] (engine.py 68): INFO Train: [9/30][40/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0908	time_all 66.34114074707031	mem 34092MB
+[2022-09-10 16:32:52 base_net] (engine.py 68): INFO Train: [9/30][50/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0914	time_all 74.50023913383484	mem 34092MB
+[2022-09-10 16:32:59 base_net] (engine.py 68): INFO Train: [9/30][60/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0916	time_all 81.55506706237793	mem 34092MB
+[2022-09-10 16:33:06 base_net] (engine.py 68): INFO Train: [9/30][70/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0946	time_all 88.49744486808777	mem 34092MB
+[2022-09-10 16:33:13 base_net] (engine.py 68): INFO Train: [9/30][80/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0952	time_all 95.16685056686401	mem 34092MB
+[2022-09-10 16:33:19 base_net] (engine.py 68): INFO Train: [9/30][90/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0940	time_all 102.03320169448853	mem 34092MB
+[2022-09-10 16:33:26 base_net] (engine.py 68): INFO Train: [9/30][100/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0941	time_all 108.49717330932617	mem 34092MB
+[2022-09-10 16:33:32 base_net] (engine.py 68): INFO Train: [9/30][110/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0945	time_all 114.99350571632385	mem 34092MB
+[2022-09-10 16:33:39 base_net] (engine.py 68): INFO Train: [9/30][120/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0948	time_all 121.13966012001038	mem 34092MB
+[2022-09-10 16:33:45 base_net] (engine.py 68): INFO Train: [9/30][130/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0947	time_all 127.1882975101471	mem 34092MB
+[2022-09-10 16:33:50 base_net] (engine.py 68): INFO Train: [9/30][140/141]	lr 0.0000080	wd 0.0000	avg_loss 0.0946	time_all 132.96476340293884	mem 34092MB
+[2022-09-10 16:33:51 base_net] (engine.py 78): INFO EPOCH 9 training takes 0:02:13
+[2022-09-10 16:33:57 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:34:09 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9682    0.9044    0.9352      3504
+        fake     0.9101    0.9703    0.9392      3496
+
+    accuracy                         0.9373      7000
+   macro avg     0.9392    0.9373    0.9372      7000
+weighted avg     0.9392    0.9373    0.9372      7000
+
+[2022-09-10 16:34:09 base_net] (engine.py 123): INFO Test epoch:9, avg_loss:0.21994158625602722, time_all:18.495900869369507
+[2022-09-10 16:34:09 base_net] (engine.py 125): INFO best_auc:0.9373233467080447, auc:0.9373233467080447, f1:0.9361665660444474, acc:0.9372857142857143, ap:0.8978981467504343, sen:0.9702517162443643, spe:0.9043949771663687
+[2022-09-10 16:34:09 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_9_0.93732.pth saving......
+[2022-09-10 16:34:10 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_9_0.93732.pth saved !!!
+[2022-09-10 16:34:30 base_net] (engine.py 68): INFO Train: [10/30][0/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0821	time_all 20.452701807022095	mem 34092MB
+[2022-09-10 16:34:45 base_net] (engine.py 68): INFO Train: [10/30][10/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0916	time_all 35.69262433052063	mem 34092MB
+[2022-09-10 16:34:55 base_net] (engine.py 68): INFO Train: [10/30][20/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0941	time_all 44.79697251319885	mem 34092MB
+[2022-09-10 16:35:03 base_net] (engine.py 68): INFO Train: [10/30][30/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0928	time_all 53.28790521621704	mem 34092MB
+[2022-09-10 16:35:11 base_net] (engine.py 68): INFO Train: [10/30][40/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0901	time_all 61.32186698913574	mem 34092MB
+[2022-09-10 16:35:19 base_net] (engine.py 68): INFO Train: [10/30][50/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0904	time_all 69.30680012702942	mem 34092MB
+[2022-09-10 16:35:26 base_net] (engine.py 68): INFO Train: [10/30][60/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0890	time_all 76.20831871032715	mem 34092MB
+[2022-09-10 16:35:33 base_net] (engine.py 68): INFO Train: [10/30][70/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0888	time_all 83.32368493080139	mem 34092MB
+[2022-09-10 16:35:40 base_net] (engine.py 68): INFO Train: [10/30][80/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0897	time_all 90.4610505104065	mem 34092MB
+[2022-09-10 16:35:47 base_net] (engine.py 68): INFO Train: [10/30][90/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0913	time_all 97.1129822731018	mem 34092MB
+[2022-09-10 16:35:54 base_net] (engine.py 68): INFO Train: [10/30][100/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0920	time_all 104.06649398803711	mem 34092MB
+[2022-09-10 16:36:00 base_net] (engine.py 68): INFO Train: [10/30][110/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0907	time_all 110.6963438987732	mem 34092MB
+[2022-09-10 16:36:07 base_net] (engine.py 68): INFO Train: [10/30][120/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0907	time_all 116.82224130630493	mem 34092MB
+[2022-09-10 16:36:13 base_net] (engine.py 68): INFO Train: [10/30][130/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0904	time_all 122.89435172080994	mem 34092MB
+[2022-09-10 16:36:18 base_net] (engine.py 68): INFO Train: [10/30][140/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0908	time_all 128.64485716819763	mem 34092MB
+[2022-09-10 16:36:19 base_net] (engine.py 78): INFO EPOCH 10 training takes 0:02:09
+[2022-09-10 16:36:25 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:36:38 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9640    0.9092    0.9358      3504
+        fake     0.9139    0.9660    0.9392      3496
+
+    accuracy                         0.9376      7000
+   macro avg     0.9390    0.9376    0.9375      7000
+weighted avg     0.9390    0.9376    0.9375      7000
+
+[2022-09-10 16:36:38 base_net] (engine.py 123): INFO Test epoch:10, avg_loss:0.21554049849510193, time_all:19.18778681755066
+[2022-09-10 16:36:38 base_net] (engine.py 125): INFO best_auc:0.9376038368703176, auc:0.9376038368703176, f1:0.9367461886267348, acc:0.9375714285714286, ap:0.8998283164521294, sen:0.9659610983954063, spe:0.9092465753398709
+[2022-09-10 16:36:38 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_10_0.93760.pth saving......
+[2022-09-10 16:36:39 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_10_0.93760.pth saved !!!
+[2022-09-10 16:37:07 base_net] (engine.py 68): INFO Train: [11/30][0/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0711	time_all 28.1562283039093	mem 34092MB
+[2022-09-10 16:37:16 base_net] (engine.py 68): INFO Train: [11/30][10/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0824	time_all 37.0551073551178	mem 34092MB
+[2022-09-10 16:37:24 base_net] (engine.py 68): INFO Train: [11/30][20/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0876	time_all 45.59970140457153	mem 34092MB
+[2022-09-10 16:37:33 base_net] (engine.py 68): INFO Train: [11/30][30/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0895	time_all 53.96331810951233	mem 34092MB
+[2022-09-10 16:37:41 base_net] (engine.py 68): INFO Train: [11/30][40/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0892	time_all 62.128746509552	mem 34092MB
+[2022-09-10 16:37:48 base_net] (engine.py 68): INFO Train: [11/30][50/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0901	time_all 69.18842053413391	mem 34092MB
+[2022-09-10 16:37:55 base_net] (engine.py 68): INFO Train: [11/30][60/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0889	time_all 76.34471774101257	mem 34092MB
+[2022-09-10 16:38:02 base_net] (engine.py 68): INFO Train: [11/30][70/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0886	time_all 83.35952043533325	mem 34092MB
+[2022-09-10 16:38:09 base_net] (engine.py 68): INFO Train: [11/30][80/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0902	time_all 90.08374738693237	mem 34092MB
+[2022-09-10 16:38:15 base_net] (engine.py 68): INFO Train: [11/30][90/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0903	time_all 96.64689946174622	mem 34092MB
+[2022-09-10 16:38:22 base_net] (engine.py 68): INFO Train: [11/30][100/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0907	time_all 103.21661186218262	mem 34092MB
+[2022-09-10 16:38:28 base_net] (engine.py 68): INFO Train: [11/30][110/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0907	time_all 109.6108808517456	mem 34092MB
+[2022-09-10 16:38:34 base_net] (engine.py 68): INFO Train: [11/30][120/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0906	time_all 115.67704510688782	mem 34092MB
+[2022-09-10 16:38:40 base_net] (engine.py 68): INFO Train: [11/30][130/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0909	time_all 121.67428803443909	mem 34092MB
+[2022-09-10 16:38:46 base_net] (engine.py 68): INFO Train: [11/30][140/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0907	time_all 127.43011736869812	mem 34092MB
+[2022-09-10 16:38:47 base_net] (engine.py 78): INFO EPOCH 11 training takes 0:02:07
+[2022-09-10 16:38:52 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:39:05 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9660    0.9081    0.9362      3504
+        fake     0.9131    0.9680    0.9397      3496
+
+    accuracy                         0.9380      7000
+   macro avg     0.9396    0.9380    0.9379      7000
+weighted avg     0.9396    0.9380    0.9379      7000
+
+[2022-09-10 16:39:05 base_net] (engine.py 123): INFO Test epoch:11, avg_loss:0.22053632140159607, time_all:18.77287220954895
+[2022-09-10 16:39:05 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9380342047793695, f1:0.9370792759185208, acc:0.938, ap:0.8998607934933888, sen:0.96796338672492, spe:0.9081050228284586
+[2022-09-10 16:39:05 base_net] (tools.py 12): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_11_0.93803.pth saving......
+[2022-09-10 16:39:06 base_net] (tools.py 14): INFO .save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_11_0.93803.pth saved !!!
+[2022-09-10 16:39:29 base_net] (engine.py 68): INFO Train: [12/30][0/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0674	time_all 23.502946615219116	mem 34092MB
+[2022-09-10 16:39:40 base_net] (engine.py 68): INFO Train: [12/30][10/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0915	time_all 34.04903960227966	mem 34092MB
+[2022-09-10 16:39:49 base_net] (engine.py 68): INFO Train: [12/30][20/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0900	time_all 42.919365882873535	mem 34092MB
+[2022-09-10 16:39:57 base_net] (engine.py 68): INFO Train: [12/30][30/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0887	time_all 50.94601798057556	mem 34092MB
+[2022-09-10 16:40:04 base_net] (engine.py 68): INFO Train: [12/30][40/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0877	time_all 58.620909214019775	mem 34092MB
+[2022-09-10 16:40:12 base_net] (engine.py 68): INFO Train: [12/30][50/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0877	time_all 66.3159863948822	mem 34092MB
+[2022-09-10 16:40:19 base_net] (engine.py 68): INFO Train: [12/30][60/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0899	time_all 73.2108645439148	mem 34092MB
+[2022-09-10 16:40:26 base_net] (engine.py 68): INFO Train: [12/30][70/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0918	time_all 80.10632967948914	mem 34092MB
+[2022-09-10 16:40:33 base_net] (engine.py 68): INFO Train: [12/30][80/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0916	time_all 86.76964545249939	mem 34092MB
+[2022-09-10 16:40:39 base_net] (engine.py 68): INFO Train: [12/30][90/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0915	time_all 93.33209562301636	mem 34092MB
+[2022-09-10 16:40:46 base_net] (engine.py 68): INFO Train: [12/30][100/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0911	time_all 99.84845900535583	mem 34092MB
+[2022-09-10 16:40:52 base_net] (engine.py 68): INFO Train: [12/30][110/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0920	time_all 106.3337254524231	mem 34092MB
+[2022-09-10 16:40:58 base_net] (engine.py 68): INFO Train: [12/30][120/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0915	time_all 112.27635335922241	mem 34092MB
+[2022-09-10 16:41:04 base_net] (engine.py 68): INFO Train: [12/30][130/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0910	time_all 118.25586533546448	mem 34092MB
+[2022-09-10 16:41:10 base_net] (engine.py 68): INFO Train: [12/30][140/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0903	time_all 124.0596387386322	mem 34092MB
+[2022-09-10 16:41:10 base_net] (engine.py 78): INFO EPOCH 12 training takes 0:02:04
+[2022-09-10 16:41:16 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:41:29 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9646    0.9090    0.9359      3504
+        fake     0.9137    0.9665    0.9394      3496
+
+    accuracy                         0.9377      7000
+   macro avg     0.9392    0.9377    0.9377      7000
+weighted avg     0.9392    0.9377    0.9377      7000
+
+[2022-09-10 16:41:29 base_net] (engine.py 123): INFO Test epoch:12, avg_loss:0.2196231484413147, time_all:18.66865825653076
+[2022-09-10 16:41:29 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.937747183996322, f1:0.9368635411260812, acc:0.9377142857142857, ap:0.8998715647432122, sen:0.9665331807752674, spe:0.9089611872120178
+[2022-09-10 16:41:49 base_net] (engine.py 68): INFO Train: [13/30][0/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0775	time_all 20.240930557250977	mem 34092MB
+[2022-09-10 16:42:04 base_net] (engine.py 68): INFO Train: [13/30][10/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0828	time_all 34.85842227935791	mem 34092MB
+[2022-09-10 16:42:13 base_net] (engine.py 68): INFO Train: [13/30][20/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0861	time_all 43.932865858078	mem 34092MB
+[2022-09-10 16:42:22 base_net] (engine.py 68): INFO Train: [13/30][30/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0870	time_all 52.99764704704285	mem 34092MB
+[2022-09-10 16:42:30 base_net] (engine.py 68): INFO Train: [13/30][40/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0867	time_all 60.35052728652954	mem 34092MB
+[2022-09-10 16:42:38 base_net] (engine.py 68): INFO Train: [13/30][50/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0861	time_all 68.45825839042664	mem 34092MB
+[2022-09-10 16:42:45 base_net] (engine.py 68): INFO Train: [13/30][60/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0871	time_all 75.64620566368103	mem 34092MB
+[2022-09-10 16:42:52 base_net] (engine.py 68): INFO Train: [13/30][70/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0875	time_all 82.56953811645508	mem 34092MB
+[2022-09-10 16:42:59 base_net] (engine.py 68): INFO Train: [13/30][80/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0874	time_all 89.33089780807495	mem 34092MB
+[2022-09-10 16:43:05 base_net] (engine.py 68): INFO Train: [13/30][90/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0876	time_all 95.94105672836304	mem 34092MB
+[2022-09-10 16:43:12 base_net] (engine.py 68): INFO Train: [13/30][100/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0879	time_all 102.63890218734741	mem 34092MB
+[2022-09-10 16:43:18 base_net] (engine.py 68): INFO Train: [13/30][110/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0880	time_all 109.11589074134827	mem 34092MB
+[2022-09-10 16:43:24 base_net] (engine.py 68): INFO Train: [13/30][120/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0882	time_all 115.16743612289429	mem 34092MB
+[2022-09-10 16:43:30 base_net] (engine.py 68): INFO Train: [13/30][130/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0883	time_all 121.18900561332703	mem 34092MB
+[2022-09-10 16:43:36 base_net] (engine.py 68): INFO Train: [13/30][140/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0883	time_all 126.9508728981018	mem 34092MB
+[2022-09-10 16:43:37 base_net] (engine.py 78): INFO EPOCH 13 training takes 0:02:07
+[2022-09-10 16:43:42 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:43:55 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9640    0.9095    0.9360      3504
+        fake     0.9142    0.9660    0.9394      3496
+
+    accuracy                         0.9377      7000
+   macro avg     0.9391    0.9377    0.9377      7000
+weighted avg     0.9391    0.9377    0.9377      7000
+
+[2022-09-10 16:43:55 base_net] (engine.py 123): INFO Test epoch:13, avg_loss:0.21943238377571106, time_all:18.18725037574768
+[2022-09-10 16:43:55 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9377465309342444, f1:0.9368976215611611, acc:0.9377142857142857, ap:0.9000673062508441, sen:0.9659610983954063, spe:0.9095319634677239
+[2022-09-10 16:44:17 base_net] (engine.py 68): INFO Train: [14/30][0/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0489	time_all 22.03940749168396	mem 34092MB
+[2022-09-10 16:44:30 base_net] (engine.py 68): INFO Train: [14/30][10/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0850	time_all 34.92732000350952	mem 34092MB
+[2022-09-10 16:44:39 base_net] (engine.py 68): INFO Train: [14/30][20/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0831	time_all 43.79037141799927	mem 34092MB
+[2022-09-10 16:44:47 base_net] (engine.py 68): INFO Train: [14/30][30/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0887	time_all 52.125860929489136	mem 34092MB
+[2022-09-10 16:44:55 base_net] (engine.py 68): INFO Train: [14/30][40/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0886	time_all 60.1595401763916	mem 34092MB
+[2022-09-10 16:45:02 base_net] (engine.py 68): INFO Train: [14/30][50/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0883	time_all 67.44629573822021	mem 34092MB
+[2022-09-10 16:45:09 base_net] (engine.py 68): INFO Train: [14/30][60/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0890	time_all 74.23488783836365	mem 34092MB
+[2022-09-10 16:45:16 base_net] (engine.py 68): INFO Train: [14/30][70/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0878	time_all 81.06687927246094	mem 34092MB
+[2022-09-10 16:45:23 base_net] (engine.py 68): INFO Train: [14/30][80/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0877	time_all 87.59246587753296	mem 34092MB
+[2022-09-10 16:45:29 base_net] (engine.py 68): INFO Train: [14/30][90/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0867	time_all 94.18314719200134	mem 34092MB
+[2022-09-10 16:45:36 base_net] (engine.py 68): INFO Train: [14/30][100/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0862	time_all 100.68247056007385	mem 34092MB
+[2022-09-10 16:45:42 base_net] (engine.py 68): INFO Train: [14/30][110/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0854	time_all 107.1397716999054	mem 34092MB
+[2022-09-10 16:45:48 base_net] (engine.py 68): INFO Train: [14/30][120/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0855	time_all 113.21704077720642	mem 34092MB
+[2022-09-10 16:45:54 base_net] (engine.py 68): INFO Train: [14/30][130/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0856	time_all 119.2370617389679	mem 34092MB
+[2022-09-10 16:46:00 base_net] (engine.py 68): INFO Train: [14/30][140/141]	lr 0.0000016	wd 0.0000	avg_loss 0.0857	time_all 125.00716233253479	mem 34092MB
+[2022-09-10 16:46:01 base_net] (engine.py 78): INFO EPOCH 14 training takes 0:02:05
+[2022-09-10 16:46:06 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:46:20 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9623    0.9098    0.9353      3504
+        fake     0.9143    0.9642    0.9386      3496
+
+    accuracy                         0.9370      7000
+   macro avg     0.9383    0.9370    0.9370      7000
+weighted avg     0.9383    0.9370    0.9370      7000
+
+[2022-09-10 16:46:20 base_net] (engine.py 123): INFO Test epoch:14, avg_loss:0.22060714662075043, time_all:19.28314781188965
+[2022-09-10 16:46:20 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9370311014283774, f1:0.9362407453972933, acc:0.937, ap:0.8994599075961386, sen:0.9642448512558232, spe:0.9098173515955771
+[2022-09-10 16:46:39 base_net] (engine.py 68): INFO Train: [15/30][0/141]	lr 0.0000003	wd 0.0000	avg_loss 0.1287	time_all 18.807282209396362	mem 34092MB
+[2022-09-10 16:46:55 base_net] (engine.py 68): INFO Train: [15/30][10/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0879	time_all 35.49277973175049	mem 34092MB
+[2022-09-10 16:47:05 base_net] (engine.py 68): INFO Train: [15/30][20/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0867	time_all 44.83485555648804	mem 34092MB
+[2022-09-10 16:47:13 base_net] (engine.py 68): INFO Train: [15/30][30/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0882	time_all 52.92101764678955	mem 34092MB
+[2022-09-10 16:47:20 base_net] (engine.py 68): INFO Train: [15/30][40/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0899	time_all 60.627556800842285	mem 34092MB
+[2022-09-10 16:47:28 base_net] (engine.py 68): INFO Train: [15/30][50/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0895	time_all 68.14809703826904	mem 34092MB
+[2022-09-10 16:47:35 base_net] (engine.py 68): INFO Train: [15/30][60/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0888	time_all 75.22428441047668	mem 34092MB
+[2022-09-10 16:47:42 base_net] (engine.py 68): INFO Train: [15/30][70/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0890	time_all 82.31207299232483	mem 34092MB
+[2022-09-10 16:47:49 base_net] (engine.py 68): INFO Train: [15/30][80/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0879	time_all 88.95047116279602	mem 34092MB
+[2022-09-10 16:47:55 base_net] (engine.py 68): INFO Train: [15/30][90/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0882	time_all 95.52074861526489	mem 34092MB
+[2022-09-10 16:48:02 base_net] (engine.py 68): INFO Train: [15/30][100/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0878	time_all 102.11480832099915	mem 34092MB
+[2022-09-10 16:48:09 base_net] (engine.py 68): INFO Train: [15/30][110/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0875	time_all 108.64058542251587	mem 34092MB
+[2022-09-10 16:48:15 base_net] (engine.py 68): INFO Train: [15/30][120/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0882	time_all 114.70290875434875	mem 34092MB
+[2022-09-10 16:48:21 base_net] (engine.py 68): INFO Train: [15/30][130/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0874	time_all 120.72402000427246	mem 34092MB
+[2022-09-10 16:48:26 base_net] (engine.py 68): INFO Train: [15/30][140/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0878	time_all 126.46206164360046	mem 34092MB
+[2022-09-10 16:48:27 base_net] (engine.py 78): INFO EPOCH 15 training takes 0:02:07
+[2022-09-10 16:48:32 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:48:45 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9648    0.9084    0.9358      3504
+        fake     0.9133    0.9668    0.9393      3496
+
+    accuracy                         0.9376      7000
+   macro avg     0.9391    0.9376    0.9375      7000
+weighted avg     0.9391    0.9376    0.9375      7000
+
+[2022-09-10 16:48:45 base_net] (engine.py 123): INFO Test epoch:15, avg_loss:0.22174270451068878, time_all:18.130629777908325
+[2022-09-10 16:48:45 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9376048164634337, f1:0.9366945379788248, acc:0.9375714285714286, ap:0.89953521410283, sen:0.9668192219651979, spe:0.9083904109563117
+[2022-09-10 16:49:08 base_net] (engine.py 68): INFO Train: [16/30][0/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0791	time_all 22.963929891586304	mem 34092MB
+[2022-09-10 16:49:20 base_net] (engine.py 68): INFO Train: [16/30][10/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0943	time_all 34.64141368865967	mem 34092MB
+[2022-09-10 16:49:28 base_net] (engine.py 68): INFO Train: [16/30][20/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0880	time_all 43.30664920806885	mem 34092MB
+[2022-09-10 16:49:37 base_net] (engine.py 68): INFO Train: [16/30][30/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0900	time_all 51.443639039993286	mem 34092MB
+[2022-09-10 16:49:44 base_net] (engine.py 68): INFO Train: [16/30][40/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0888	time_all 59.02322053909302	mem 34092MB
+[2022-09-10 16:49:52 base_net] (engine.py 68): INFO Train: [16/30][50/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0891	time_all 67.1270363330841	mem 34092MB
+[2022-09-10 16:49:59 base_net] (engine.py 68): INFO Train: [16/30][60/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0890	time_all 73.99716424942017	mem 34092MB
+[2022-09-10 16:50:06 base_net] (engine.py 68): INFO Train: [16/30][70/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0895	time_all 81.13703417778015	mem 34092MB
+[2022-09-10 16:50:13 base_net] (engine.py 68): INFO Train: [16/30][80/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0885	time_all 88.20796489715576	mem 34092MB
+[2022-09-10 16:50:20 base_net] (engine.py 68): INFO Train: [16/30][90/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0886	time_all 95.07512593269348	mem 34092MB
+[2022-09-10 16:50:27 base_net] (engine.py 68): INFO Train: [16/30][100/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0883	time_all 101.72604060173035	mem 34092MB
+[2022-09-10 16:50:33 base_net] (engine.py 68): INFO Train: [16/30][110/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0895	time_all 108.13009929656982	mem 34092MB
+[2022-09-10 16:50:39 base_net] (engine.py 68): INFO Train: [16/30][120/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0890	time_all 114.10352873802185	mem 34092MB
+[2022-09-10 16:50:45 base_net] (engine.py 68): INFO Train: [16/30][130/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0880	time_all 120.07326102256775	mem 34092MB
+[2022-09-10 16:50:51 base_net] (engine.py 68): INFO Train: [16/30][140/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0877	time_all 125.851881980896	mem 34092MB
+[2022-09-10 16:50:52 base_net] (engine.py 78): INFO EPOCH 16 training takes 0:02:06
+[2022-09-10 16:50:58 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:51:11 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9637    0.9090    0.9355      3504
+        fake     0.9137    0.9657    0.9390      3496
+
+    accuracy                         0.9373      7000
+   macro avg     0.9387    0.9373    0.9372      7000
+weighted avg     0.9387    0.9373    0.9372      7000
+
+[2022-09-10 16:51:11 base_net] (engine.py 123): INFO Test epoch:16, avg_loss:0.22325432300567627, time_all:19.744280338287354
+[2022-09-10 16:51:11 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9373181222114249, f1:0.9364602322956468, acc:0.9372857142857143, ap:0.8994484033228332, sen:0.9656750572054758, spe:0.9089611872120178
+[2022-09-10 16:51:38 base_net] (engine.py 68): INFO Train: [17/30][0/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0812	time_all 26.452412843704224	mem 34092MB
+[2022-09-10 16:51:47 base_net] (engine.py 68): INFO Train: [17/30][10/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0840	time_all 35.87256336212158	mem 34092MB
+[2022-09-10 16:51:56 base_net] (engine.py 68): INFO Train: [17/30][20/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0828	time_all 44.63282918930054	mem 34092MB
+[2022-09-10 16:52:04 base_net] (engine.py 68): INFO Train: [17/30][30/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0825	time_all 52.86524510383606	mem 34092MB
+[2022-09-10 16:52:12 base_net] (engine.py 68): INFO Train: [17/30][40/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0830	time_all 61.09705924987793	mem 34092MB
+[2022-09-10 16:52:20 base_net] (engine.py 68): INFO Train: [17/30][50/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0850	time_all 68.68653845787048	mem 34092MB
+[2022-09-10 16:52:27 base_net] (engine.py 68): INFO Train: [17/30][60/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0849	time_all 75.86979722976685	mem 34092MB
+[2022-09-10 16:52:34 base_net] (engine.py 68): INFO Train: [17/30][70/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0847	time_all 83.05800318717957	mem 34092MB
+[2022-09-10 16:52:41 base_net] (engine.py 68): INFO Train: [17/30][80/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0840	time_all 89.88986492156982	mem 34092MB
+[2022-09-10 16:52:48 base_net] (engine.py 68): INFO Train: [17/30][90/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0844	time_all 96.55190014839172	mem 34092MB
+[2022-09-10 16:52:55 base_net] (engine.py 68): INFO Train: [17/30][100/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0849	time_all 103.42719340324402	mem 34092MB
+[2022-09-10 16:53:01 base_net] (engine.py 68): INFO Train: [17/30][110/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0850	time_all 109.92251515388489	mem 34092MB
+[2022-09-10 16:53:07 base_net] (engine.py 68): INFO Train: [17/30][120/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0852	time_all 116.08837056159973	mem 34092MB
+[2022-09-10 16:53:13 base_net] (engine.py 68): INFO Train: [17/30][130/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0861	time_all 122.06212091445923	mem 34092MB
+[2022-09-10 16:53:19 base_net] (engine.py 68): INFO Train: [17/30][140/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0860	time_all 127.83481240272522	mem 34092MB
+[2022-09-10 16:53:20 base_net] (engine.py 78): INFO EPOCH 17 training takes 0:02:08
+[2022-09-10 16:53:26 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:53:40 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9629    0.9098    0.9356      3504
+        fake     0.9143    0.9648    0.9389      3496
+
+    accuracy                         0.9373      7000
+   macro avg     0.9386    0.9373    0.9372      7000
+weighted avg     0.9386    0.9373    0.9372      7000
+
+[2022-09-10 16:53:40 base_net] (engine.py 123): INFO Test epoch:17, avg_loss:0.2211049348115921, time_all:20.206374406814575
+[2022-09-10 16:53:40 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9373171426183087, f1:0.9365103308421511, acc:0.9372857142857143, ap:0.8997420756742942, sen:0.9648169336356842, spe:0.9098173515955771
+[2022-09-10 16:54:05 base_net] (engine.py 68): INFO Train: [18/30][0/141]	lr 0.0000003	wd 0.0000	avg_loss 0.1386	time_all 24.994130849838257	mem 34092MB
+[2022-09-10 16:54:17 base_net] (engine.py 68): INFO Train: [18/30][10/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0942	time_all 37.39740991592407	mem 34092MB
+[2022-09-10 16:54:27 base_net] (engine.py 68): INFO Train: [18/30][20/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0862	time_all 46.55778956413269	mem 34092MB
+[2022-09-10 16:54:35 base_net] (engine.py 68): INFO Train: [18/30][30/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0851	time_all 55.03407073020935	mem 34092MB
+[2022-09-10 16:54:43 base_net] (engine.py 68): INFO Train: [18/30][40/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0852	time_all 62.96659016609192	mem 34092MB
+[2022-09-10 16:54:50 base_net] (engine.py 68): INFO Train: [18/30][50/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0860	time_all 70.35536932945251	mem 34092MB
+[2022-09-10 16:54:58 base_net] (engine.py 68): INFO Train: [18/30][60/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0879	time_all 77.74481582641602	mem 34092MB
+[2022-09-10 16:55:05 base_net] (engine.py 68): INFO Train: [18/30][70/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0872	time_all 84.89569735527039	mem 34092MB
+[2022-09-10 16:55:12 base_net] (engine.py 68): INFO Train: [18/30][80/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0867	time_all 91.67948269844055	mem 34092MB
+[2022-09-10 16:55:18 base_net] (engine.py 68): INFO Train: [18/30][90/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0869	time_all 98.44346165657043	mem 34092MB
+[2022-09-10 16:55:25 base_net] (engine.py 68): INFO Train: [18/30][100/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0874	time_all 105.05726790428162	mem 34092MB
+[2022-09-10 16:55:32 base_net] (engine.py 68): INFO Train: [18/30][110/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0873	time_all 111.69058060646057	mem 34092MB
+[2022-09-10 16:55:38 base_net] (engine.py 68): INFO Train: [18/30][120/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0875	time_all 117.76234340667725	mem 34092MB
+[2022-09-10 16:55:44 base_net] (engine.py 68): INFO Train: [18/30][130/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0877	time_all 123.73559284210205	mem 34092MB
+[2022-09-10 16:55:50 base_net] (engine.py 68): INFO Train: [18/30][140/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0878	time_all 129.5308587551117	mem 34092MB
+[2022-09-10 16:55:50 base_net] (engine.py 78): INFO EPOCH 18 training takes 0:02:10
+[2022-09-10 16:55:57 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:56:10 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9623    0.9098    0.9353      3504
+        fake     0.9143    0.9642    0.9386      3496
+
+    accuracy                         0.9370      7000
+   macro avg     0.9383    0.9370    0.9370      7000
+weighted avg     0.9383    0.9370    0.9370      7000
+
+[2022-09-10 16:56:10 base_net] (engine.py 123): INFO Test epoch:18, avg_loss:0.22180891036987305, time_all:19.710607051849365
+[2022-09-10 16:56:10 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9370311014283774, f1:0.9362407453972933, acc:0.937, ap:0.8994599075961386, sen:0.9642448512558232, spe:0.9098173515955771
+[2022-09-10 16:56:38 base_net] (engine.py 68): INFO Train: [19/30][0/141]	lr 0.0000003	wd 0.0000	avg_loss 0.1136	time_all 27.76543641090393	mem 34092MB
+[2022-09-10 16:56:47 base_net] (engine.py 68): INFO Train: [19/30][10/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0921	time_all 36.77000665664673	mem 34092MB
+[2022-09-10 16:56:55 base_net] (engine.py 68): INFO Train: [19/30][20/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0898	time_all 45.3195104598999	mem 34092MB
+[2022-09-10 16:57:04 base_net] (engine.py 68): INFO Train: [19/30][30/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0903	time_all 54.301836252212524	mem 34092MB
+[2022-09-10 16:57:12 base_net] (engine.py 68): INFO Train: [19/30][40/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0914	time_all 62.35907602310181	mem 34092MB
+[2022-09-10 16:57:20 base_net] (engine.py 68): INFO Train: [19/30][50/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0903	time_all 70.29470634460449	mem 34092MB
+[2022-09-10 16:57:27 base_net] (engine.py 68): INFO Train: [19/30][60/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0878	time_all 77.51866173744202	mem 34092MB
+[2022-09-10 16:57:35 base_net] (engine.py 68): INFO Train: [19/30][70/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0874	time_all 84.95101475715637	mem 34092MB
+[2022-09-10 16:57:41 base_net] (engine.py 68): INFO Train: [19/30][80/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0864	time_all 91.54806327819824	mem 34092MB
+[2022-09-10 16:57:48 base_net] (engine.py 68): INFO Train: [19/30][90/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0855	time_all 98.26163339614868	mem 34092MB
+[2022-09-10 16:57:55 base_net] (engine.py 68): INFO Train: [19/30][100/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0861	time_all 105.08010625839233	mem 34092MB
+[2022-09-10 16:58:01 base_net] (engine.py 68): INFO Train: [19/30][110/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0863	time_all 111.55547618865967	mem 34092MB
+[2022-09-10 16:58:08 base_net] (engine.py 68): INFO Train: [19/30][120/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0862	time_all 117.68657779693604	mem 34092MB
+[2022-09-10 16:58:14 base_net] (engine.py 68): INFO Train: [19/30][130/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0858	time_all 123.64759731292725	mem 34092MB
+[2022-09-10 16:58:19 base_net] (engine.py 68): INFO Train: [19/30][140/141]	lr 0.0000003	wd 0.0000	avg_loss 0.0855	time_all 129.42490768432617	mem 34092MB
+[2022-09-10 16:58:20 base_net] (engine.py 78): INFO EPOCH 19 training takes 0:02:10
+[2022-09-10 16:58:26 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 16:58:38 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9631    0.9090    0.9353      3504
+        fake     0.9136    0.9651    0.9387      3496
+
+    accuracy                         0.9370      7000
+   macro avg     0.9384    0.9370    0.9370      7000
+weighted avg     0.9384    0.9370    0.9370      7000
+
+[2022-09-10 16:58:38 base_net] (engine.py 123): INFO Test epoch:19, avg_loss:0.2214798629283905, time_all:18.04880952835083
+[2022-09-10 16:58:38 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9370320810214935, f1:0.9361911545499426, acc:0.937, ap:0.8991663014775664, sen:0.9651029748256147, spe:0.9089611872120178
+[2022-09-10 16:59:06 base_net] (engine.py 68): INFO Train: [20/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0670	time_all 27.845089435577393	mem 34092MB
+[2022-09-10 16:59:14 base_net] (engine.py 68): INFO Train: [20/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0813	time_all 36.24528884887695	mem 34092MB
+[2022-09-10 16:59:23 base_net] (engine.py 68): INFO Train: [20/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0869	time_all 44.82821726799011	mem 34092MB
+[2022-09-10 16:59:31 base_net] (engine.py 68): INFO Train: [20/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0849	time_all 52.80888891220093	mem 34092MB
+[2022-09-10 16:59:38 base_net] (engine.py 68): INFO Train: [20/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0844	time_all 60.38070297241211	mem 34092MB
+[2022-09-10 16:59:46 base_net] (engine.py 68): INFO Train: [20/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0859	time_all 68.24668622016907	mem 34092MB
+[2022-09-10 16:59:53 base_net] (engine.py 68): INFO Train: [20/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0867	time_all 75.39173126220703	mem 34092MB
+[2022-09-10 17:00:00 base_net] (engine.py 68): INFO Train: [20/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0864	time_all 82.3444881439209	mem 34092MB
+[2022-09-10 17:00:07 base_net] (engine.py 68): INFO Train: [20/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0872	time_all 89.40313673019409	mem 34092MB
+[2022-09-10 17:00:14 base_net] (engine.py 68): INFO Train: [20/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0871	time_all 96.36785411834717	mem 34092MB
+[2022-09-10 17:00:21 base_net] (engine.py 68): INFO Train: [20/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0867	time_all 103.19646286964417	mem 34092MB
+[2022-09-10 17:00:28 base_net] (engine.py 68): INFO Train: [20/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0873	time_all 109.84163761138916	mem 34092MB
+[2022-09-10 17:00:34 base_net] (engine.py 68): INFO Train: [20/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0865	time_all 115.80678629875183	mem 34092MB
+[2022-09-10 17:00:40 base_net] (engine.py 68): INFO Train: [20/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0857	time_all 121.81033849716187	mem 34092MB
+[2022-09-10 17:00:46 base_net] (engine.py 68): INFO Train: [20/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0850	time_all 127.55938053131104	mem 34092MB
+[2022-09-10 17:00:46 base_net] (engine.py 78): INFO EPOCH 20 training takes 0:02:08
+[2022-09-10 17:00:52 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:01:08 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9639    0.9078    0.9350      3504
+        fake     0.9127    0.9660    0.9386      3496
+
+    accuracy                         0.9369      7000
+   macro avg     0.9383    0.9369    0.9368      7000
+weighted avg     0.9384    0.9369    0.9368      7000
+
+[2022-09-10 17:01:08 base_net] (engine.py 123): INFO Test epoch:20, avg_loss:0.22218634188175201, time_all:21.95848274230957
+[2022-09-10 17:01:08 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9368903665506828, f1:0.9359883320300748, acc:0.9368571428571428, ap:0.8986353052136805, sen:0.9659610983954063, spe:0.9078196347006056
+[2022-09-10 17:01:36 base_net] (engine.py 68): INFO Train: [21/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0788	time_all 27.75379180908203	mem 34092MB
+[2022-09-10 17:01:46 base_net] (engine.py 68): INFO Train: [21/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0797	time_all 38.21716833114624	mem 34092MB
+[2022-09-10 17:01:55 base_net] (engine.py 68): INFO Train: [21/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0836	time_all 46.89274549484253	mem 34092MB
+[2022-09-10 17:02:04 base_net] (engine.py 68): INFO Train: [21/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0865	time_all 55.610342025756836	mem 34092MB
+[2022-09-10 17:02:12 base_net] (engine.py 68): INFO Train: [21/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0854	time_all 63.275760650634766	mem 34092MB
+[2022-09-10 17:02:20 base_net] (engine.py 68): INFO Train: [21/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0871	time_all 71.27930736541748	mem 34092MB
+[2022-09-10 17:02:26 base_net] (engine.py 68): INFO Train: [21/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0895	time_all 78.12791109085083	mem 34092MB
+[2022-09-10 17:02:33 base_net] (engine.py 68): INFO Train: [21/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0898	time_all 85.12961268424988	mem 34092MB
+[2022-09-10 17:02:40 base_net] (engine.py 68): INFO Train: [21/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0897	time_all 92.06310510635376	mem 34092MB
+[2022-09-10 17:02:47 base_net] (engine.py 68): INFO Train: [21/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0900	time_all 98.64262080192566	mem 34092MB
+[2022-09-10 17:02:53 base_net] (engine.py 68): INFO Train: [21/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0895	time_all 105.22332668304443	mem 34092MB
+[2022-09-10 17:03:00 base_net] (engine.py 68): INFO Train: [21/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0888	time_all 111.75475597381592	mem 34092MB
+[2022-09-10 17:03:06 base_net] (engine.py 68): INFO Train: [21/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0893	time_all 117.85293555259705	mem 34092MB
+[2022-09-10 17:03:12 base_net] (engine.py 68): INFO Train: [21/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0884	time_all 123.84749579429626	mem 34092MB
+[2022-09-10 17:03:18 base_net] (engine.py 68): INFO Train: [21/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0881	time_all 129.61325931549072	mem 34092MB
+[2022-09-10 17:03:18 base_net] (engine.py 78): INFO EPOCH 21 training takes 0:02:10
+[2022-09-10 17:03:24 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:03:38 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9622    0.9092    0.9350      3504
+        fake     0.9138    0.9642    0.9383      3496
+
+    accuracy                         0.9367      7000
+   macro avg     0.9380    0.9367    0.9367      7000
+weighted avg     0.9381    0.9367    0.9367      7000
+
+[2022-09-10 17:03:38 base_net] (engine.py 123): INFO Test epoch:21, avg_loss:0.2215607762336731, time_all:19.429374933242798
+[2022-09-10 17:03:38 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9367457133005235, f1:0.9359384476998338, acc:0.9367142857142857, ap:0.8989819445900453, sen:0.9642448512558232, spe:0.9092465753398709
+[2022-09-10 17:04:07 base_net] (engine.py 68): INFO Train: [22/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.1046	time_all 29.373462438583374	mem 34092MB
+[2022-09-10 17:04:16 base_net] (engine.py 68): INFO Train: [22/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0912	time_all 38.5061137676239	mem 34092MB
+[2022-09-10 17:04:26 base_net] (engine.py 68): INFO Train: [22/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0876	time_all 47.93173694610596	mem 34092MB
+[2022-09-10 17:04:35 base_net] (engine.py 68): INFO Train: [22/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0846	time_all 57.01006507873535	mem 34092MB
+[2022-09-10 17:04:43 base_net] (engine.py 68): INFO Train: [22/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0870	time_all 64.9273247718811	mem 34092MB
+[2022-09-10 17:04:51 base_net] (engine.py 68): INFO Train: [22/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0866	time_all 73.11098289489746	mem 34092MB
+[2022-09-10 17:04:58 base_net] (engine.py 68): INFO Train: [22/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0872	time_all 80.4527804851532	mem 34092MB
+[2022-09-10 17:05:05 base_net] (engine.py 68): INFO Train: [22/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0871	time_all 87.51634669303894	mem 34092MB
+[2022-09-10 17:05:12 base_net] (engine.py 68): INFO Train: [22/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0867	time_all 94.14217948913574	mem 34092MB
+[2022-09-10 17:05:19 base_net] (engine.py 68): INFO Train: [22/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0867	time_all 100.5785756111145	mem 34092MB
+[2022-09-10 17:05:25 base_net] (engine.py 68): INFO Train: [22/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0863	time_all 107.2026002407074	mem 34092MB
+[2022-09-10 17:05:32 base_net] (engine.py 68): INFO Train: [22/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0865	time_all 113.70366382598877	mem 34092MB
+[2022-09-10 17:05:38 base_net] (engine.py 68): INFO Train: [22/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0860	time_all 119.69926929473877	mem 34092MB
+[2022-09-10 17:05:44 base_net] (engine.py 68): INFO Train: [22/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0849	time_all 125.68773674964905	mem 34092MB
+[2022-09-10 17:05:49 base_net] (engine.py 68): INFO Train: [22/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0847	time_all 131.46619868278503	mem 34092MB
+[2022-09-10 17:05:50 base_net] (engine.py 78): INFO EPOCH 22 training takes 0:02:12
+[2022-09-10 17:05:56 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:06:09 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9648    0.9081    0.9356      3504
+        fake     0.9130    0.9668    0.9391      3496
+
+    accuracy                         0.9374      7000
+   macro avg     0.9389    0.9375    0.9374      7000
+weighted avg     0.9390    0.9374    0.9374      7000
+
+[2022-09-10 17:06:09 base_net] (engine.py 123): INFO Test epoch:22, avg_loss:0.22268155217170715, time_all:19.044299840927124
+[2022-09-10 17:06:09 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9374621223995069, f1:0.9365427900051753, acc:0.9374285714285714, ap:0.8992967041661656, sen:0.9668192219651979, spe:0.9081050228284586
+[2022-09-10 17:06:27 base_net] (engine.py 68): INFO Train: [23/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.1060	time_all 17.793190717697144	mem 34092MB
+[2022-09-10 17:06:44 base_net] (engine.py 68): INFO Train: [23/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0851	time_all 34.49736714363098	mem 34092MB
+[2022-09-10 17:06:52 base_net] (engine.py 68): INFO Train: [23/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0891	time_all 42.70404100418091	mem 34092MB
+[2022-09-10 17:07:00 base_net] (engine.py 68): INFO Train: [23/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0872	time_all 51.2603874206543	mem 34092MB
+[2022-09-10 17:07:08 base_net] (engine.py 68): INFO Train: [23/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0860	time_all 59.28386306762695	mem 34092MB
+[2022-09-10 17:07:17 base_net] (engine.py 68): INFO Train: [23/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0862	time_all 67.53641939163208	mem 34092MB
+[2022-09-10 17:07:24 base_net] (engine.py 68): INFO Train: [23/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0855	time_all 74.71915006637573	mem 34092MB
+[2022-09-10 17:07:31 base_net] (engine.py 68): INFO Train: [23/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0852	time_all 81.76492977142334	mem 34092MB
+[2022-09-10 17:07:38 base_net] (engine.py 68): INFO Train: [23/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0857	time_all 88.70883226394653	mem 34092MB
+[2022-09-10 17:07:44 base_net] (engine.py 68): INFO Train: [23/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0860	time_all 95.28104734420776	mem 34092MB
+[2022-09-10 17:07:51 base_net] (engine.py 68): INFO Train: [23/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0853	time_all 101.78890371322632	mem 34092MB
+[2022-09-10 17:07:57 base_net] (engine.py 68): INFO Train: [23/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0857	time_all 108.32104849815369	mem 34092MB
+[2022-09-10 17:08:04 base_net] (engine.py 68): INFO Train: [23/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0861	time_all 114.4325749874115	mem 34092MB
+[2022-09-10 17:08:10 base_net] (engine.py 68): INFO Train: [23/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0854	time_all 120.44964385032654	mem 34092MB
+[2022-09-10 17:08:15 base_net] (engine.py 68): INFO Train: [23/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0857	time_all 126.24014377593994	mem 34092MB
+[2022-09-10 17:08:16 base_net] (engine.py 78): INFO EPOCH 23 training takes 0:02:06
+[2022-09-10 17:08:22 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:08:35 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9631    0.9075    0.9345      3504
+        fake     0.9124    0.9651    0.9380      3496
+
+    accuracy                         0.9363      7000
+   macro avg     0.9377    0.9363    0.9362      7000
+weighted avg     0.9377    0.9363    0.9362      7000
+
+[2022-09-10 17:08:35 base_net] (engine.py 123): INFO Test epoch:23, avg_loss:0.222068652510643, time_all:19.00515842437744
+[2022-09-10 17:08:35 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9363186107018588, f1:0.9354337200127277, acc:0.9362857142857143, ap:0.8979741195818809, sen:0.9651029748256147, spe:0.9075342465727525
+[2022-09-10 17:08:59 base_net] (engine.py 68): INFO Train: [24/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.1041	time_all 24.203349590301514	mem 34092MB
+[2022-09-10 17:09:08 base_net] (engine.py 68): INFO Train: [24/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0779	time_all 33.44205856323242	mem 34092MB
+[2022-09-10 17:09:18 base_net] (engine.py 68): INFO Train: [24/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0769	time_all 42.50545954704285	mem 34092MB
+[2022-09-10 17:09:26 base_net] (engine.py 68): INFO Train: [24/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0825	time_all 50.93396472930908	mem 34092MB
+[2022-09-10 17:09:34 base_net] (engine.py 68): INFO Train: [24/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0813	time_all 58.64576745033264	mem 34092MB
+[2022-09-10 17:09:42 base_net] (engine.py 68): INFO Train: [24/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0841	time_all 66.56132292747498	mem 34092MB
+[2022-09-10 17:09:48 base_net] (engine.py 68): INFO Train: [24/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0846	time_all 73.2738893032074	mem 34092MB
+[2022-09-10 17:09:55 base_net] (engine.py 68): INFO Train: [24/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0856	time_all 80.3983564376831	mem 34092MB
+[2022-09-10 17:10:02 base_net] (engine.py 68): INFO Train: [24/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0866	time_all 87.33643770217896	mem 34092MB
+[2022-09-10 17:10:09 base_net] (engine.py 68): INFO Train: [24/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0864	time_all 93.94783163070679	mem 34092MB
+[2022-09-10 17:10:16 base_net] (engine.py 68): INFO Train: [24/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0858	time_all 100.74518585205078	mem 34092MB
+[2022-09-10 17:10:22 base_net] (engine.py 68): INFO Train: [24/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0864	time_all 107.22951531410217	mem 34092MB
+[2022-09-10 17:10:28 base_net] (engine.py 68): INFO Train: [24/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0867	time_all 113.28014016151428	mem 34092MB
+[2022-09-10 17:10:34 base_net] (engine.py 68): INFO Train: [24/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0864	time_all 119.27408933639526	mem 34092MB
+[2022-09-10 17:10:40 base_net] (engine.py 68): INFO Train: [24/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0862	time_all 125.04371976852417	mem 34092MB
+[2022-09-10 17:10:41 base_net] (engine.py 78): INFO EPOCH 24 training takes 0:02:05
+[2022-09-10 17:10:46 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:10:59 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9648    0.9075    0.9353      3504
+        fake     0.9125    0.9668    0.9389      3496
+
+    accuracy                         0.9371      7000
+   macro avg     0.9387    0.9372    0.9371      7000
+weighted avg     0.9387    0.9371    0.9371      7000
+
+[2022-09-10 17:10:59 base_net] (engine.py 123): INFO Test epoch:24, avg_loss:0.2227591723203659, time_all:18.443209886550903
+[2022-09-10 17:10:59 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9371767342716529, f1:0.9362391554274495, acc:0.9371428571428572, ap:0.8988200706480258, sen:0.9668192219651979, spe:0.9075342465727525
+[2022-09-10 17:11:26 base_net] (engine.py 68): INFO Train: [25/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0562	time_all 27.192533016204834	mem 34092MB
+[2022-09-10 17:11:35 base_net] (engine.py 68): INFO Train: [25/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0840	time_all 36.11262917518616	mem 34092MB
+[2022-09-10 17:11:45 base_net] (engine.py 68): INFO Train: [25/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0847	time_all 45.43521213531494	mem 34092MB
+[2022-09-10 17:11:52 base_net] (engine.py 68): INFO Train: [25/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0828	time_all 53.13688397407532	mem 34092MB
+[2022-09-10 17:12:00 base_net] (engine.py 68): INFO Train: [25/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0842	time_all 61.125667572021484	mem 34092MB
+[2022-09-10 17:12:08 base_net] (engine.py 68): INFO Train: [25/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0856	time_all 68.76146745681763	mem 34092MB
+[2022-09-10 17:12:15 base_net] (engine.py 68): INFO Train: [25/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0857	time_all 75.76913809776306	mem 34092MB
+[2022-09-10 17:12:22 base_net] (engine.py 68): INFO Train: [25/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0866	time_all 82.97407865524292	mem 34092MB
+[2022-09-10 17:12:29 base_net] (engine.py 68): INFO Train: [25/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0862	time_all 89.65119814872742	mem 34092MB
+[2022-09-10 17:12:35 base_net] (engine.py 68): INFO Train: [25/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0870	time_all 96.26756739616394	mem 34092MB
+[2022-09-10 17:12:42 base_net] (engine.py 68): INFO Train: [25/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0864	time_all 102.8878242969513	mem 34092MB
+[2022-09-10 17:12:48 base_net] (engine.py 68): INFO Train: [25/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0870	time_all 109.24423050880432	mem 34092MB
+[2022-09-10 17:12:54 base_net] (engine.py 68): INFO Train: [25/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0874	time_all 115.37240886688232	mem 34092MB
+[2022-09-10 17:13:00 base_net] (engine.py 68): INFO Train: [25/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0873	time_all 121.33174705505371	mem 34092MB
+[2022-09-10 17:13:06 base_net] (engine.py 68): INFO Train: [25/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0868	time_all 127.11648225784302	mem 34092MB
+[2022-09-10 17:13:07 base_net] (engine.py 78): INFO EPOCH 25 training takes 0:02:07
+[2022-09-10 17:13:13 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:13:27 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9603    0.9104    0.9347      3504
+        fake     0.9146    0.9622    0.9378      3496
+
+    accuracy                         0.9363      7000
+   macro avg     0.9374    0.9363    0.9362      7000
+weighted avg     0.9375    0.9363    0.9362      7000
+
+[2022-09-10 17:13:27 base_net] (engine.py 123): INFO Test epoch:25, avg_loss:0.22035086154937744, time_all:19.889037609100342
+[2022-09-10 17:13:27 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9363153453914715, f1:0.9355974028574172, acc:0.9362857142857143, ap:0.8989506669717062, sen:0.9622425629263094, spe:0.9103881278512832
+[2022-09-10 17:13:47 base_net] (engine.py 68): INFO Train: [26/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0699	time_all 20.415955543518066	mem 34092MB
+[2022-09-10 17:14:02 base_net] (engine.py 68): INFO Train: [26/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0827	time_all 35.35685873031616	mem 34092MB
+[2022-09-10 17:14:11 base_net] (engine.py 68): INFO Train: [26/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0827	time_all 44.11816215515137	mem 34092MB
+[2022-09-10 17:14:19 base_net] (engine.py 68): INFO Train: [26/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0838	time_all 52.43012285232544	mem 34092MB
+[2022-09-10 17:14:27 base_net] (engine.py 68): INFO Train: [26/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0855	time_all 60.15668249130249	mem 34092MB
+[2022-09-10 17:14:35 base_net] (engine.py 68): INFO Train: [26/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0839	time_all 68.2030713558197	mem 34092MB
+[2022-09-10 17:14:42 base_net] (engine.py 68): INFO Train: [26/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0840	time_all 75.09895253181458	mem 34092MB
+[2022-09-10 17:14:49 base_net] (engine.py 68): INFO Train: [26/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0838	time_all 82.3409640789032	mem 34092MB
+[2022-09-10 17:14:56 base_net] (engine.py 68): INFO Train: [26/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0835	time_all 89.27307653427124	mem 34092MB
+[2022-09-10 17:15:03 base_net] (engine.py 68): INFO Train: [26/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0824	time_all 95.8631603717804	mem 34092MB
+[2022-09-10 17:15:09 base_net] (engine.py 68): INFO Train: [26/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0833	time_all 102.76224970817566	mem 34092MB
+[2022-09-10 17:15:16 base_net] (engine.py 68): INFO Train: [26/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0844	time_all 109.07375574111938	mem 34092MB
+[2022-09-10 17:15:22 base_net] (engine.py 68): INFO Train: [26/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0847	time_all 115.11334705352783	mem 34092MB
+[2022-09-10 17:15:28 base_net] (engine.py 68): INFO Train: [26/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0849	time_all 121.08120489120483	mem 34092MB
+[2022-09-10 17:15:34 base_net] (engine.py 68): INFO Train: [26/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0848	time_all 126.84323811531067	mem 34092MB
+[2022-09-10 17:15:34 base_net] (engine.py 78): INFO EPOCH 26 training takes 0:02:07
+[2022-09-10 17:15:40 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:15:54 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9634    0.9084    0.9351      3504
+        fake     0.9131    0.9654    0.9385      3496
+
+    accuracy                         0.9369      7000
+   macro avg     0.9383    0.9369    0.9368      7000
+weighted avg     0.9383    0.9369    0.9368      7000
+
+[2022-09-10 17:15:54 base_net] (engine.py 123): INFO Test epoch:26, avg_loss:0.22212155163288116, time_all:19.669366359710693
+[2022-09-10 17:15:54 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9368897134886054, f1:0.9360227915494579, acc:0.9368571428571428, ap:0.8988300673868466, sen:0.9653890160155453, spe:0.9083904109563117
+[2022-09-10 17:16:15 base_net] (engine.py 68): INFO Train: [27/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0808	time_all 21.43712878227234	mem 34092MB
+[2022-09-10 17:16:29 base_net] (engine.py 68): INFO Train: [27/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0861	time_all 34.97806143760681	mem 34092MB
+[2022-09-10 17:16:38 base_net] (engine.py 68): INFO Train: [27/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0866	time_all 44.12085008621216	mem 34092MB
+[2022-09-10 17:16:46 base_net] (engine.py 68): INFO Train: [27/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0882	time_all 52.41081500053406	mem 34092MB
+[2022-09-10 17:16:54 base_net] (engine.py 68): INFO Train: [27/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0879	time_all 60.377336263656616	mem 34092MB
+[2022-09-10 17:17:02 base_net] (engine.py 68): INFO Train: [27/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0889	time_all 67.70219302177429	mem 34092MB
+[2022-09-10 17:17:09 base_net] (engine.py 68): INFO Train: [27/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0880	time_all 74.69436001777649	mem 34092MB
+[2022-09-10 17:17:15 base_net] (engine.py 68): INFO Train: [27/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0872	time_all 81.56786441802979	mem 34092MB
+[2022-09-10 17:17:22 base_net] (engine.py 68): INFO Train: [27/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0877	time_all 88.11238813400269	mem 34092MB
+[2022-09-10 17:17:29 base_net] (engine.py 68): INFO Train: [27/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0879	time_all 94.75092101097107	mem 34092MB
+[2022-09-10 17:17:35 base_net] (engine.py 68): INFO Train: [27/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0890	time_all 101.27699565887451	mem 34092MB
+[2022-09-10 17:17:41 base_net] (engine.py 68): INFO Train: [27/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0881	time_all 107.63262510299683	mem 34092MB
+[2022-09-10 17:17:48 base_net] (engine.py 68): INFO Train: [27/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0873	time_all 113.6785774230957	mem 34092MB
+[2022-09-10 17:17:53 base_net] (engine.py 68): INFO Train: [27/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0869	time_all 119.64996886253357	mem 34092MB
+[2022-09-10 17:17:59 base_net] (engine.py 68): INFO Train: [27/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0862	time_all 125.41269373893738	mem 34092MB
+[2022-09-10 17:18:00 base_net] (engine.py 78): INFO EPOCH 27 training takes 0:02:06
+[2022-09-10 17:18:06 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:18:23 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9628    0.9087    0.9350      3504
+        fake     0.9133    0.9648    0.9384      3496
+
+    accuracy                         0.9367      7000
+   macro avg     0.9381    0.9367    0.9367      7000
+weighted avg     0.9381    0.9367    0.9367      7000
+
+[2022-09-10 17:18:23 base_net] (engine.py 123): INFO Test epoch:27, avg_loss:0.22175484895706177, time_all:23.19987654685974
+[2022-09-10 17:18:23 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9367463663626009, f1:0.9359052029719682, acc:0.9367142857142857, ap:0.8987865699639201, sen:0.9648169336356842, spe:0.9086757990841647
+[2022-09-10 17:18:50 base_net] (engine.py 68): INFO Train: [28/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0645	time_all 26.576480865478516	mem 34092MB
+[2022-09-10 17:18:59 base_net] (engine.py 68): INFO Train: [28/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0812	time_all 35.50006985664368	mem 34092MB
+[2022-09-10 17:19:08 base_net] (engine.py 68): INFO Train: [28/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0763	time_all 44.41062331199646	mem 34092MB
+[2022-09-10 17:19:16 base_net] (engine.py 68): INFO Train: [28/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0809	time_all 52.713414907455444	mem 34092MB
+[2022-09-10 17:19:24 base_net] (engine.py 68): INFO Train: [28/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0806	time_all 61.04915761947632	mem 34092MB
+[2022-09-10 17:19:32 base_net] (engine.py 68): INFO Train: [28/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0833	time_all 68.56831908226013	mem 34092MB
+[2022-09-10 17:19:39 base_net] (engine.py 68): INFO Train: [28/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0825	time_all 75.76520347595215	mem 34092MB
+[2022-09-10 17:19:46 base_net] (engine.py 68): INFO Train: [28/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0834	time_all 82.94878339767456	mem 34092MB
+[2022-09-10 17:19:53 base_net] (engine.py 68): INFO Train: [28/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0830	time_all 89.7680332660675	mem 34092MB
+[2022-09-10 17:20:00 base_net] (engine.py 68): INFO Train: [28/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0832	time_all 96.5073254108429	mem 34092MB
+[2022-09-10 17:20:07 base_net] (engine.py 68): INFO Train: [28/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0855	time_all 103.55000138282776	mem 34092MB
+[2022-09-10 17:20:13 base_net] (engine.py 68): INFO Train: [28/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0859	time_all 110.311439037323	mem 34092MB
+[2022-09-10 17:20:20 base_net] (engine.py 68): INFO Train: [28/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0860	time_all 116.55707359313965	mem 34092MB
+[2022-09-10 17:20:26 base_net] (engine.py 68): INFO Train: [28/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0866	time_all 122.53116345405579	mem 34092MB
+[2022-09-10 17:20:31 base_net] (engine.py 68): INFO Train: [28/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0863	time_all 128.30328631401062	mem 34092MB
+[2022-09-10 17:20:32 base_net] (engine.py 78): INFO EPOCH 28 training takes 0:02:08
+[2022-09-10 17:20:38 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:20:51 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9631    0.9087    0.9351      3504
+        fake     0.9134    0.9651    0.9385      3496
+
+    accuracy                         0.9369      7000
+   macro avg     0.9382    0.9369    0.9368      7000
+weighted avg     0.9383    0.9369    0.9368      7000
+
+[2022-09-10 17:20:51 base_net] (engine.py 123): INFO Test epoch:28, avg_loss:0.22211018204689026, time_all:19.116631031036377
+[2022-09-10 17:20:51 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9368893869575666, f1:0.9360397599320814, acc:0.9368571428571428, ap:0.898927606910688, sen:0.9651029748256147, spe:0.9086757990841647
+[2022-09-10 17:21:10 base_net] (engine.py 68): INFO Train: [29/30][0/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0501	time_all 18.566742420196533	mem 34092MB
+[2022-09-10 17:21:26 base_net] (engine.py 68): INFO Train: [29/30][10/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0747	time_all 34.5094051361084	mem 34092MB
+[2022-09-10 17:21:35 base_net] (engine.py 68): INFO Train: [29/30][20/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0794	time_all 43.47619366645813	mem 34092MB
+[2022-09-10 17:21:43 base_net] (engine.py 68): INFO Train: [29/30][30/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0837	time_all 51.6592903137207	mem 34092MB
+[2022-09-10 17:21:51 base_net] (engine.py 68): INFO Train: [29/30][40/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0863	time_all 59.70818209648132	mem 34092MB
+[2022-09-10 17:21:59 base_net] (engine.py 68): INFO Train: [29/30][50/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0869	time_all 67.41315984725952	mem 34092MB
+[2022-09-10 17:22:06 base_net] (engine.py 68): INFO Train: [29/30][60/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0883	time_all 74.39897561073303	mem 34092MB
+[2022-09-10 17:22:13 base_net] (engine.py 68): INFO Train: [29/30][70/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0883	time_all 81.57547664642334	mem 34092MB
+[2022-09-10 17:22:19 base_net] (engine.py 68): INFO Train: [29/30][80/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0873	time_all 88.14057517051697	mem 34092MB
+[2022-09-10 17:22:26 base_net] (engine.py 68): INFO Train: [29/30][90/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0877	time_all 94.72946047782898	mem 34092MB
+[2022-09-10 17:22:32 base_net] (engine.py 68): INFO Train: [29/30][100/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0872	time_all 101.26558423042297	mem 34092MB
+[2022-09-10 17:22:39 base_net] (engine.py 68): INFO Train: [29/30][110/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0883	time_all 107.69095396995544	mem 34092MB
+[2022-09-10 17:22:45 base_net] (engine.py 68): INFO Train: [29/30][120/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0881	time_all 113.67793464660645	mem 34092MB
+[2022-09-10 17:22:51 base_net] (engine.py 68): INFO Train: [29/30][130/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0877	time_all 119.64077091217041	mem 34092MB
+[2022-09-10 17:22:57 base_net] (engine.py 68): INFO Train: [29/30][140/141]	lr 0.0000001	wd 0.0000	avg_loss 0.0881	time_all 125.37942409515381	mem 34092MB
+[2022-09-10 17:22:57 base_net] (engine.py 78): INFO EPOCH 29 training takes 0:02:05
+[2022-09-10 17:23:01 base_net] (engine.py 95): INFO Testing 0/28
+[2022-09-10 17:23:15 base_net] (engine.py 122): INFO 
+              precision    recall  f1-score   support
+
+        real     0.9631    0.9087    0.9351      3504
+        fake     0.9134    0.9651    0.9385      3496
+
+    accuracy                         0.9369      7000
+   macro avg     0.9382    0.9369    0.9368      7000
+weighted avg     0.9383    0.9369    0.9368      7000
+
+[2022-09-10 17:23:15 base_net] (engine.py 123): INFO Test epoch:29, avg_loss:0.222421795129776, time_all:18.22746729850769
+[2022-09-10 17:23:15 base_net] (engine.py 125): INFO best_auc:0.9380342047793695, auc:0.9368893869575666, f1:0.9360397599320814, acc:0.9368571428571428, ap:0.898927606910688, sen:0.9651029748256147, spe:0.9086757990841647
+[2022-09-10 17:23:15 base_net] (train.py 61): INFO Training time 1:13:55

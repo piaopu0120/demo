@@ -51,11 +51,18 @@ def create_logger(output_dir, dist_rank=0, name=''):
 
 def create_dataloader(args):
     if args.mode == 'train' and args.object == 'image':
-        # train_pos,train_neg,val
-        return dataloader.create_train_image_dataloader(getattr(args.dataset, args.dataset.name), args)
+        if args.dataset.name in ['FF_face','small']:
+            dataset_train_pos,train_pos_sampler,dataset_train_neg,train_neg_sampler,dataset_val,val_sampler = dataloader.create_train_image_dataset(getattr(args.dataset, args.dataset.name), args)
+        elif args.dataset.name in ['FF_dir']:
+            dataset_train_pos,train_pos_sampler,dataset_train_neg,train_neg_sampler,dataset_val,val_sampler = dataloader.create_train_FF_image_dataset(getattr(args.dataset, args.dataset.name), args)
+        return dataloader.create_train_dataloader(args,dataset_train_pos,train_pos_sampler,dataset_train_neg,train_neg_sampler,dataset_val,val_sampler)
     if args.mode == 'test' and args.object == 'image':
-        return dataloader.create_test_image_dataloader(getattr(args.dataset, args.dataset.name), args)
-
+        if args.dataset.name in ['FF_face','small']:
+            dataset_val,val_sampler = dataloader.create_test_image_dataset(getattr(args.dataset, args.dataset.name), args)
+        elif args.dataset.name in ['FF_dir']:
+            dataset_val,val_sampler = dataloader.create_test_FF_image_dataset(getattr(args.dataset, args.dataset.name), args)
+        return dataloader.create_test_dataloader(args,dataset_val,val_sampler)
+    
 
 def create_model(args):
     if args.model.name == 'base_net':

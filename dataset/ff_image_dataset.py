@@ -8,7 +8,7 @@ from glob import glob
 import random
 import numpy as np
 import cv2
-from transform import create_transform_resize
+from .transforms.transform import create_transform_resize
 class FaceForensicsDataset(Dataset):
     def __init__(self,is_real,frame_dir,num_frames,split_dir,split,transform):
         super().__init__()
@@ -129,6 +129,20 @@ class FaceForensicsDataset(Dataset):
 
     def __len__(self):
         return len(self.data)
+    
+    def collate_train_function(self,data):
+        transposed_data = list(zip(*data))
+        lab, img,img_path = transposed_data[0], transposed_data[1], transposed_data[2]
+        img = torch.stack(img, 0)
+        lab = torch.from_numpy(np.stack(lab, 0))
+        return lab, img, img_path
+
+    def collate_val_function(self,data):
+        transposed_data = list(zip(*data))
+        lab,img, img_path = transposed_data[0], transposed_data[1], transposed_data[2]
+        img = torch.stack(img, 0)
+        lab = torch.from_numpy(np.stack(lab, 0))
+        return lab, img, img_path
 
 if __name__ == '__main__':
     split_dir = '/raid/lpy/data/FaceForensics++/splits/'

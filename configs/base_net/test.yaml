@@ -1,8 +1,10 @@
 mode: 'test' 
 object: 'image'
+save_dir: 'save/save_test/'
+
 pretrained: True # backbone是否用ImageNet预训练的权重
 load_checkpoint: True
-resume: '/home/lpy/project/myproject/save_res50/ckpt_epoch_3_0.92560839263137.pth'
+resume: '/home/lpy/project/myproject/.save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_11_0.93803.pth'
 manual_seed: 43
 
 batch_size: 128
@@ -10,8 +12,8 @@ print_freq: 10
 threshold: 0.5 
 
 dataset:
-  name: 'FF_img'
-  FF_img:
+  name: 'FF_face'
+  FF_face:
     val_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test_shuffle.txt'
     image_size: 256
     transform: 'resize'
