@@ -4,10 +4,10 @@ save_dir: 'save/save_test/'
 
 pretrained: True # backbone是否用ImageNet预训练的权重
 load_checkpoint: True
-resume: '/home/lpy/project/myproject/.save/save_res50_gffdtransform/ckpt_base_net_resnet50_epoch_11_0.93803.pth'
+resume: '/home/lpy/project/myproject/save/srm_adamw/ckpt_srm_resnet50_epoch_4_0.90557.pth'
 manual_seed: 43
 
-batch_size: 128
+batch_size: 256
 print_freq: 10
 threshold: 0.5 
 
@@ -16,6 +16,14 @@ dataset:
   FF_face:
     val_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test_shuffle.txt'
     image_size: 256
+    transform: 'resize'
+  FF_dir:
+    data_dir: '/raid/lpy/data/FaceForensics++/'
+    split_dir : '/raid/lpy/data/FaceForensics++/splits/'
+    frame_dir : '/raid/lpy/data/FaceForensics++/method/c23/frames_64/' # 最后一定要有/
+    bbox_name : 'bbox_64_1.5'
+    image_size: 256
+    num_frames: 50
     transform: 'resize'
   CDF_img:
     val_data_path: ''
@@ -27,7 +35,7 @@ dataset:
     transform: 'resize'
 
 model:
-  name: 'base_net'
+  name: 'srm' # 'resnet' # 'base_net'
   
 
 backbone:
@@ -38,16 +46,27 @@ backbone:
 opt:
   name: 'adamw'
   adamw:
-    lr: 2.0e-4
-    weight_decay: 1.0e-5
+    lr: 2.0e-4 # 1e-3 # 2.0e-4 
+    weight_decay: 1.0e-5 # 0.02 # 1.0e-5
+  adam:
+    lr: 1.0e-3
+    betas1: 0.9
+    betas2: 0.999
+    eps: 1.0e-8
+    weight_decay: 0
+  SGD:
+    lr: 1.0e-4
+    momentum: 0.9
+    decay: 1.0e-6
 
 sched:
-  name: 'MultiStepLR'
+  name: 'StepLR'
   MultiStepLR:
     milestones: [3, 6, 10, 15, 20]
     gamma: 0.2
-
-criterion: 'CE'
-
+  StepLR:
+    step_size: 2
+    gamma: 0.6
+criterion: 'CE' # 'CE','BCE'
 
 

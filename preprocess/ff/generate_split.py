@@ -32,23 +32,24 @@ def write_annotation(path,data_list,label):
 
 def generate_annotations(train_name,val_name,test_name):
     category = ['Deepfakes','Face2Face','FaceSwap','NeuralTextures','FaceShifter']
-    label = '0'
-    n_frames = 50
+    label = '1'
+    n_frames = 10
     train_list = []
     val_list = []
     test_list = []
-    
-    # for cate in category:
-    if True:
-    #     path = '/raid/lpy/data/FaceForensics++/'+cate+'/c23/faces_64/'
-        path = '/raid/lpy/data/FaceForensics++/original_sequences/youtube/c23/faces_dcl/'
+    for cate in category:
+    # if True:
+        path = '/raid/lpy/data/FaceForensics++/'+cate+'/c23/faces_64/'
+        # path = '/raid/lpy/data/FaceForensics++/original_sequences/youtube/c23/faces_64/'
         for _,dirs,__ in os.walk(path):
             for dir in dirs:
                 video_path = path+dir
                 tmp = glob(video_path+'/*.png')
+                if len(tmp)<n_frames:
+                    print(video_path)
                 tmp = sorted(random.sample(tmp,min(n_frames,len(tmp))))
-                u = dir
-                # u,v = dir.split('_')
+                # u = dir
+                u,v = dir.split('_')
                 if u in train_name:
                     train_list.extend(tmp)
                 elif u in val_name:
@@ -58,14 +59,16 @@ def generate_annotations(train_name,val_name,test_name):
                 else:
                     print('why?? '+dir)
             break
-        print(len(test_list))
-    random.shuffle(train_list)
-    train_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt'
-    val_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_real.txt'
-    test_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test_real.txt'
-    write_annotation(train_path,train_list,label)
-    write_annotation(val_path,val_list,label)
-    write_annotation(test_path,test_list,label)
+    print(len(test_list))
+    # random.shuffle(train_list)
+    # random.shuffle(val_list)
+    # random.shuffle(test_list)
+    # train_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt'
+    # val_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_real.txt'
+    # test_path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test_real.txt'
+    # write_annotation(train_path,train_list,label)
+    # write_annotation(val_path,val_list,label)
+    # write_annotation(test_path,test_list,label)
 
 def shuffle():
     path = '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/test.txt'

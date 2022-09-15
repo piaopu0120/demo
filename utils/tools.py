@@ -21,7 +21,7 @@ def load_checkpoint(args, model, optimizer, lr_scheduler, logger):
     auc = 0.0
     if 'optimizer' in checkpoint and 'lr_scheduler' in checkpoint and 'epoch' in checkpoint:
         optimizer.load_state_dict(checkpoint['optimizer'])
-        lr_scheduler.load_state_dict(checkpoint['lr_scheduler'])
+        # lr_scheduler.load_state_dict(checkpoint['lr_scheduler'])
         logger.info(f"=> loaded successfully '{args.resume}' (epoch {checkpoint['epoch']})")
         if 'auc' in checkpoint:
             auc = checkpoint['auc']

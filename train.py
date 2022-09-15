@@ -26,13 +26,15 @@ def main(args):
                                                         args.local_rank], broadcast_buffers=False, find_unused_parameters=True)
     else:
         model = DataParallel(model)
-    [train_pos_dataloader, train_neg_dataloader, val_dataloader],[train_pos_sampler,train_neg_sampler] = create_dataloader(args)
+    [train_pos_dataloader, train_neg_dataloader, val_dataloader],[train_pos_sampler,train_neg_sampler] = create_dataloader(args,logger)
 
     lr_scheduler = create_scheduler(args.sched.name,optimizer,getattr(args.sched,args.sched.name))
 
     criterion = None 
     if args.criterion == 'CE':
-        criterion = torch.nn.CrossEntropyLoss()  # torch.nn.BCEWithLogitsLoss()
+        criterion = torch.nn.CrossEntropyLoss()  
+    elif args.criterion == 'BCE':
+        criterion = torch.nn.BCEWithLogitsLoss()# 未好
 
     max_auc = 0.0
 

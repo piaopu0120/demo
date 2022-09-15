@@ -26,7 +26,7 @@ def main(args):
                                                         args.local_rank], broadcast_buffers=False, find_unused_parameters=True)
     else:
         model = DataParallel(model)
-    val_dataloader = create_dataloader(args)
+    val_dataloader = create_dataloader(args,logger)
 
     lr_scheduler = create_scheduler(args.sched.name,optimizer,getattr(args.sched,args.sched.name))
 

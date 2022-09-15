@@ -39,15 +39,20 @@ def train_one_epoch(args, model, criterion, data_pos_loader, data_neg_loader, op
                            for dataloader in [data_pos_loader, data_neg_loader]])
     start_time = time.time()
     for idx, datas in enumerate(zip(data_pos_loader, data_neg_loader)):
-
+        
         labels = torch.cat([item[0] for item in datas], dim=0)
         imgs = torch.cat([item[1] for item in datas], dim=0)
         labels = labels.cuda(non_blocking=True)
         imgs = imgs.cuda(non_blocking=True)
-       
         outputs = model(imgs)
+#         if idx==0:
+#             print(labels) # tensor([0, 0, 1, 1]
+#             print(outputs)
+#  # tensor([[-0.0196,  0.1183],
+#         # [ 0.0693,  0.3164],
+#         # [-0.0610,  0.2258],
+#         # [ 0.0915,  0.4140]]
         loss = criterion(outputs, labels)
-
         loss_value = loss.item()
         if not math.isfinite(loss_value):
             print("Loss is {}, stopping training".format(loss_value))
@@ -68,7 +73,7 @@ def train_one_epoch(args, model, criterion, data_pos_loader, data_neg_loader, op
             logger.info(
                 f'Train: [{epoch}/{args.epochs}][{idx}/{ n_iter_per_epoch}]\t'
                 f'lr {lr:.7f}\t'
-                f'wd {wd:.4f}\t'
+                f'wd {wd:.7f}\t'
                 f'avg_loss {TrainMeter.avg_loss:.4f}\t'
                 f'time_all {TrainMeter.time_all}\t'
                 f'mem {memory_used:.0f}MB')

@@ -1,31 +1,32 @@
 mode: 'train' 
 object: 'image'
-save_dir: 'save/save_res50_gffdtransform/'
+save_dir: 'save/dct/'
 
 pretrained: True # backbone是否用ImageNet预训练的权重
 load_checkpoint: False
-resume: ''
+resume: '' # '/home/lpy/project/myproject/save/save_res50_0.1_crop1.5_adam_stepLR_0.6_gffd_new1/ckpt_base_net_resnet50_epoch_17_0.76932.pth'
 manual_seed: 43
 
-epochs: 1
+epochs: 30
 batch_size: 128
 print_freq: 10
 threshold: 0.5 
-
+image_size: 256 
 dataset:
   name: 'FF_dir'
   FF_face: 
     train_pos_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_real.txt'
     train_neg_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/train_fake.txt'
     val_data_path: '/raid/lpy/data/FaceForensics++/annotations/ff_baseline/val_shuffle.txt'
-    image_size: 256
+    image_size: 256 # 两个地方要改
     transform: 'gffd'
   FF_dir:
     data_dir: '/raid/lpy/data/FaceForensics++/'
     split_dir : '/raid/lpy/data/FaceForensics++/splits/'
-    frame_dir : '/raid/lpy/data/FaceForensics++/method/c23/frames_64/'
+    frame_dir : '/raid/lpy/data/FaceForensics++/method/c23/frames_64/' # 最后一定要有/
+    bbox_name : 'bbox_64_1.5'
     image_size: 256
-    num_frames: 5
+    num_frames: 50
     transform: 'resize'
   CDF_img:
     train_pos_data_path: ''
@@ -41,27 +42,41 @@ dataset:
     transform: 'resize'
 
 model:
-  name: 'base_net'
+  name: 'dct' # 'base_net' # 'dct' # 'srm' # 'resnet' # 'base_net' 
   
 
 backbone:
   name: 'resnet50'
   resnet50:
+    drop_rate: 0.1
+  resnet34:
     drop_rate: 0.2
 
 opt:
   name: 'adamw'
   adamw:
-    lr: 2.0e-4
-    weight_decay: 1.0e-5
+    lr: 2.0e-4 # 1e-3 # 2.0e-4 
+    weight_decay: 1.0e-5 # 0.02 # 1.0e-5
+  adam:
+    lr: 1.0e-3
+    betas1: 0.9
+    betas2: 0.999
+    eps: 1.0e-8
+    weight_decay: 0
+  SGD:
+    lr: 1.0e-4
+    momentum: 0.9
+    decay: 1.0e-6
 
 sched:
-  name: 'MultiStepLR'
+  name: 'StepLR'
   MultiStepLR:
     milestones: [3, 6, 10, 15, 20]
     gamma: 0.2
-
-criterion: 'CE'
+  StepLR:
+    step_size: 2
+    gamma: 0.6
+criterion: 'CE' # 'CE','BCE'
 
 
 

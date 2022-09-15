@@ -24,7 +24,7 @@ def create_train_image_dataset(conf, args):
         data_file=conf.train_pos_data_path,
         mode='train',
         transform=get_transform(conf, 'train'),
-        conf=conf,
+        img_size=conf.img_size,
     )
     train_pos_sampler = None
     if args.distributed:
@@ -35,7 +35,7 @@ def create_train_image_dataset(conf, args):
         data_file=conf.train_neg_data_path,
         mode='train',
         transform=get_transform(conf, 'train'),
-        conf=conf,
+        img_size=conf.img_size,
     )
     train_neg_sampler = None
     if args.distributed:
@@ -46,7 +46,7 @@ def create_train_image_dataset(conf, args):
         data_file=conf.val_data_path,
         mode='train',
         transform=get_transform(conf, 'val'),
-        conf=conf,
+        img_size=conf.img_size,
     )
     val_sampler = None
     if args.distributed:
@@ -60,7 +60,7 @@ def create_test_image_dataset(conf, args):
         data_file=conf.val_data_path,
         mode='train',
         transform=get_transform(conf, 'val'),
-        conf=conf,
+        img_size=conf.img_size,
     )
     val_sampler = None
     if args.distributed:
@@ -71,35 +71,37 @@ def create_test_image_dataset(conf, args):
 
 def create_train_FF_image_dataset(conf, args):
     dataset_train_pos = FaceForensicsDataset(is_real=True, frame_dir=conf.frame_dir, num_frames=conf.num_frames,
-                                             split_dir=conf.split_dir, split='train', transform=get_transform(conf, 'train'))
+                                             split_dir=conf.split_dir, split='train', bbox_name=conf.bbox_name, transform=get_transform(conf, 'train'),size=conf.image_size)
     train_pos_sampler = None
     if args.distributed:
         train_pos_sampler = torch.utils.data.distributed.DistributedSampler(
             dataset_train_pos)
 
     dataset_train_neg = FaceForensicsDataset(is_real=False, frame_dir=conf.frame_dir, num_frames=conf.num_frames,
-                                             split_dir=conf.split_dir, split='train', transform=get_transform(conf, 'train'))
+                                             split_dir=conf.split_dir, split='train',  bbox_name=conf.bbox_name, transform=get_transform(conf, 'train'),size=conf.image_size)
     train_neg_sampler = None
     if args.distributed:
         train_neg_sampler = torch.utils.data.distributed.DistributedSampler(
             dataset_train_neg)
 
     dataset_val = FaceForensicsDataset(is_real=True, frame_dir=conf.frame_dir, num_frames=conf.num_frames,
-                                             split_dir=conf.split_dir, split='val', transform=get_transform(conf, 'val'))
+                                       split_dir=conf.split_dir, split='val',  bbox_name=conf.bbox_name, transform=get_transform(conf, 'val'),size=conf.image_size)
     val_sampler = None
     if args.distributed:
         val_sampler = torch.utils.data.distributed.DistributedSampler(
             dataset_val)
     return dataset_train_pos, train_pos_sampler, dataset_train_neg, train_neg_sampler, dataset_val, val_sampler
 
+
 def create_test_FF_image_dataset(conf, args):
     dataset_val = FaceForensicsDataset(is_real=True, frame_dir=conf.frame_dir, num_frames=conf.num_frames,
-                                             split_dir=conf.split_dir, split='val', transform=get_transform(conf, 'val'))
+                                       split_dir=conf.split_dir, split='test',  bbox_name=conf.bbox_name, transform=get_transform(conf, 'val'),size=conf.image_size)
     val_sampler = None
     if args.distributed:
         val_sampler = torch.utils.data.distributed.DistributedSampler(
             dataset_val)
     return dataset_val, val_sampler
+
 
 def create_train_dataloader(args, dataset_train_pos, train_pos_sampler, dataset_train_neg, train_neg_sampler, dataset_val, val_sampler):
     train_pos_dataloader = torch.utils.data.DataLoader(

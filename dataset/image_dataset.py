@@ -6,7 +6,10 @@ import cv2
 from tqdm import tqdm
 import os
 import numpy as np
-
+try:    
+    from transforms.transform import create_transform_resize
+except Exception:
+    from .transforms.transform import create_transform_resize
 
 def read_annotations(data_path):
     # lines = map(str.strip, open(data_path).readlines())
@@ -39,7 +42,7 @@ class DeepFakeImageDataset(Dataset):
                  data_file="",
                  mode="train",
                  transform=None,
-                 conf=None,):
+                 img_size=256,):
         super().__init__()
 
         self.data = read_annotations(data_file)
@@ -49,13 +52,13 @@ class DeepFakeImageDataset(Dataset):
             "mean": [0.485, 0.456, 0.406],
             "std": [0.229, 0.224, 0.225]
         }
-        self.size = conf.img_size
+        self.size = img_size
 
     def load_train_sample(self, img_info):
         img_path = img_info[0]
         lab = img_info[1]
         try:
-            img = cv2.imread(img_path, cv2.IMREAD_COLOR)
+            img = cv2.imread(img_path, cv2.IMREAD_COLOR) # BGR
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # RGB channel
             if self.transform:
                 data = self.transform(image=img)
@@ -109,3 +112,17 @@ class DeepFakeImageDataset(Dataset):
         img = torch.stack(img, 0)
         lab = torch.from_numpy(np.stack(lab, 0))
         return lab, img, img_path
+
+
+if __name__ == '__main__':
+    train_pos_data_path= '/raid/lpy/data/my_annotations/test.txt'
+    train_neg_data_path= '/raid/lpy/data/my_annotations/small_train_fake.txt'
+    val_data_path= '/raid/lpy/data/my_annotations/small_val.txt'
+    image_size= 256
+
+    dataset = DeepFakeImageDataset(data_file=train_pos_data_path,
+                 mode="train",
+                 transform=create_transform_resize(256),
+                 img_size=256,)
+    print(len(dataset))
+    dataset[0]

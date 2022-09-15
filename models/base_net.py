@@ -7,13 +7,12 @@ import timm
 MODEL_DICTS = {}
 MODEL_DICTS.update(timm.models.__dict__)
 
-
 class BaseNet(nn.Module):
     # pretrained=False, drop_rate=0.2,num_classes=2, **kwargs
-    def __init__(self, model_name, conf, num_classes=2, **kwargs) -> None:
+    def __init__(self, model_name,pretrained, conf, num_classes=2, **kwargs) -> None:
         super().__init__()
         self.encoder = MODEL_DICTS[model_name](
-            pretrained=conf.pretrained, **kwargs)
+            pretrained=pretrained, **kwargs) # !!!
         for k, v in kwargs.items():
             setattr(self, k, v)
         if hasattr(self.encoder, 'get_classifier'):
@@ -36,11 +35,11 @@ class BaseNet(nn.Module):
 if __name__ == '__main__':
     name = "resnet50"
     device = 'cpu'
-    model = BaseNet(name)
-    model = model.to(device)
-    model.eval()
-    with torch.no_grad():
-        inputs = torch.rand(4, 3, 224, 224)
-        inputs = inputs.to(device)
-        out = model(inputs)
-        print(out.shape)
+    # model = BaseNet(name)
+    # model = model.to(device)
+    # model.eval()
+    # with torch.no_grad():
+    #     inputs = torch.rand(4, 3, 224, 224)
+    #     inputs = inputs.to(device)
+    #     out = model(inputs)
+    #     print(out.shape)

@@ -14,7 +14,7 @@ def get_parameters():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--debug',action='store_true',default=False)
-    parser.add_argument('-c', '--config', type=str, default='configs/base_net/test.yaml')
+    parser.add_argument('-c', '--config', type=str, default='configs/base_net/train.yaml')
     parser.add_argument('--cuda',type=bool,default=True)
     # distributed setting
     parser.add_argument('--local_rank',type=int,default=0, help='local rank for DistributedDataParallel')

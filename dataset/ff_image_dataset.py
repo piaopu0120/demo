@@ -8,32 +8,39 @@ from glob import glob
 import random
 import numpy as np
 import cv2
-from .transforms.transform import create_transform_resize
+try:    
+    from transforms.transform import create_transform_resize
+except Exception:
+    from .transforms.transform import create_transform_resize
 class FaceForensicsDataset(Dataset):
-    def __init__(self,is_real,frame_dir,num_frames,split_dir,split,transform):
+    def __init__(self,is_real,frame_dir,num_frames,split_dir,split,bbox_name,transform,size=256):
         super().__init__()
         self.frame_dir = frame_dir
         self.num_frames = num_frames
         self.split = split
         self.transform = transform
-        self.split_name = self.plain_json(split_dir)
+        self.split_name = self.plain_json(split_dir) # 划分数据集
+        self.frame_name = frame_dir.split('/')[-2]
+        self.bbox_name = bbox_name
+        self.size=size
         self.data = []
         fake_methods = ['FaceShifter', 'Deepfakes', 'Face2Face', 'FaceSwap', 'NeuralTextures']
         real_methods = ['original_sequences/youtube']
+
         if self.split == 'train':
             if is_real:
                 self.generate_data(real_methods)
             else:
                 self.generate_data(fake_methods)
         else:
-            self.generate_data(fake_methods+real_methods)
+            self.generate_data(fake_methods+real_methods) # 验证集真假图片都有
         self.normalize = {
             "mean": [0.485, 0.456, 0.406],
             "std": [0.229, 0.224, 0.225]
         }
+       
     
     def generate_data(self,methods):
-        each_num_frame = self.num_frames//len(methods)
         for method in methods:
             frame_dir = self.frame_dir.replace('method',method)
             for _,dirs,__ in os.walk(frame_dir):
@@ -42,15 +49,17 @@ class FaceForensicsDataset(Dataset):
                         continue
                     video_path = frame_dir+dir
                     tmp = glob(video_path+'/*.png')
+                    if 'original' in method:
+                        each_num_frame =self.num_frames
+                    else:
+                        each_num_frame =self.num_frames//5
                     tmp = sorted(random.sample(tmp,min(each_num_frame,len(tmp))))
                     for p in tmp:
                         if 'original' in p:
                             label = 0
                         else:
                             label = 1
-                        self.data.append((p,label))
-                        break
-                    break 
+                        self.data.append((p,label)) # 保存frame_path和label
                 break
     
     def plain_json(self,split_dir):
@@ -82,7 +91,7 @@ class FaceForensicsDataset(Dataset):
     def load_train_sample(self, img_path):
         try:  
             basename = os.path.basename(img_path)
-            bbox_path = img_path.replace('/'+basename,'.npy').replace('frames','bbox') # !!!!!bbox_path is similar to img_path
+            bbox_path = img_path.replace('/'+basename,'.npy').replace(self.frame_name,self.bbox_name) # !!!!!bbox_path is similar to img_path
             bbox_dict = np.load(bbox_path,allow_pickle=True).item()
             img_idx = int(basename.split('.')[0])
             x0,x1,y0,y1 = bbox_dict[img_idx]
@@ -96,13 +105,13 @@ class FaceForensicsDataset(Dataset):
             return img
         except Exception as e:
             print(img_path, ' error!', e)
-            return torch.randn((3, self.size, self.size)), torch.randn((3, self.size, self.size)), 0
+            return torch.randn((3, self.size, self.size))
 
 
     def load_val_sample(self, img_path):
         try:
             basename = os.path.basename(img_path)
-            bbox_path = img_path.replace('/'+basename,'.npy').replace('frames','bbox') # !!!!!bbox_path is similar to img_path
+            bbox_path = img_path.replace('/'+basename,'.npy').replace(self.frame_name,self.bbox_name) # !!!!!bbox_path is similar to img_path
             bbox_dict = np.load(bbox_path,allow_pickle=True).item()
             img_idx = int(basename.split('.')[0])
             x0,x1,y0,y1 = bbox_dict[img_idx]
@@ -116,7 +125,7 @@ class FaceForensicsDataset(Dataset):
             return img
         except Exception as e:
             print(img_path, ' error!', e)
-            return torch.randn((3, self.size, self.size)), 0
+            return torch.randn((3, self.size, self.size))
 
     def __getitem__(self, index):
         path,lab = self.data[index]
@@ -147,5 +156,9 @@ class FaceForensicsDataset(Dataset):
 if __name__ == '__main__':
     split_dir = '/raid/lpy/data/FaceForensics++/splits/'
     frame_dir = '/raid/lpy/data/FaceForensics++/method/c23/frames_64/'
-    bbox_dir = '/raid/lpy/data/FaceForensics++/method/c23/bbox_64/'
-    dataset = FaceForensicsDataset(False,frame_dir,50, split_dir,'train',create_transform_resize(256))
+    bbox_name = 'bbox_64_1.5'
+
+   #  f= open('test1.txt',"w+")
+    dataset = FaceForensicsDataset(True,frame_dir,1, split_dir,'train',bbox_name,create_transform_resize(256))
+    lab,img,img_path = dataset[0]
+    print(img_path)
