@@ -42,7 +42,7 @@ dataset:
     transform: 'resize'
 
 model:
-  name: 'dct' # 'base_net' # 'dct' # 'srm' # 'resnet' # 'base_net' 
+  name: 'resnet' # 'dct' # 'base_net' # 'dct' # 'srm' # 'resnet' # 'base_net' 
   
 
 backbone:
